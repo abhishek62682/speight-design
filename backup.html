@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Speight Design | Home Page</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <style type="text/tailwindcss">
+      @theme {
+        --color-clifford: #da373d;
+        --font-secondary: "Instrument Sans", sans-serif;
+        --font-primary:"Cinzel Decorative", serif;
+        --text-csm: 16px;
+      }
+
+      body {
+        font-family: "Instrument Sans", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="root relative overflow-hidden">
+
+        <div id="sideMenu" class="fixed top-0 flex flex-col justify-between p-5 sm:p-6 left-0 z-[100] w-full sm:w-[400px] bg-white h-[100svh] -translate-x-full transition-transform duration-500 ease-in-out">
+
+            <div class="menu-top flex justify-between items-center">
+                <img class="w-[50px] sm:w-[60px]" src="./assets/img/logo/logo.png" alt="">
+                <button id="closeMenuBtn" class="close-btn p-2.5 border-[1px] rounded-full border-[#ced1d659]">
+                    <i class="ri-close-line text-[18px] leading-none block"></i>
+                </button>
+            </div>
+
+            <ul class="menu-middle space-y-2.5 sm:space-y-3.5 font-normal text-[36px] sm:text-[48px] md:text-[56px] leading-[42px] sm:leading-[54px] md:leading-[62px]">
+                <li>Home</li>
+                <li>Works</li>
+                <li>Services</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+
+            <div class="py-6 space-y-2.5 border-t border-t-[#ced1d666]">
+                <ul class="text-[14px] flex gap-3.5 font-medium leading-[17px]">
+                    <li>Instagram</li>
+                    <li>X</li>
+                    <li>Linkedin</li>
+                </ul>
+                <p class="text-[14px] font-medium leading-[17px]">contact@speightdesign.com</p>
+            </div>
+        </div>
+
+        <div id="menuOverlay" class="fixed inset-0 bg-black/40 z-[90] hidden"></div>
+
+       <header class="relative">
+     <nav class="py-4 px-4 sm:px-6 z-[20] fixed w-full flex justify-between items-center">
+  <div class="nav-middle order-1 sm:order-2">
+    <img class="w-18 sm:w-20" src="/assets/img/logo/logo-white.png" alt="" />
+  </div>
+
+  <div id="openMenuBtn" class="nav-left order-2 sm:order-1 cursor-pointer bg-white px-3 sm:px-3.5 leading-none py-2.5 flex items-center gap-2 sm:gap-2.5 rounded-full">
+    <i class="ri-menu-line text-[18px] leading-none block"></i>
+    <span class="text-csm leading-4">Menu</span>
+  </div>
+
+  <div class="nav-right order-3 hidden sm:block">
+    <button class="h-[36px] sm:h-[38px] bg-white px-3.5 sm:px-4 rounded-full font-normal text-[13px] sm:text-csm leading-[19px]">
+      Let's Connect
+    </button>
+  </div>
+</nav>
+
+        <div class="hero-frame h-[100svh]">
+          <div class="swiper mySwiper h-full">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/IaVcYeEdcZnfOMACnHKhRG2eA.jpg?width=3840&height=2879" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/5cee2EXdbBi2Qd6r09KHa7ZJXw.jpg?width=2500&height=2500" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-overlay z-[10] absolute inset-0 bg-black/20"></div>
+
+        <div class="hero-content absolute bottom-[30px] sm:bottom-[45px] md:bottom-[60px] w-full z-[30]">
+            <div class="px-4 sm:px-6 space-y-5 sm:space-y-6 md:space-y-8">
+              <h2 class="text-[42px] sm:text-[64px] md:text-[88px] lg:text-[112px] uppercase font-medium text-white leading-[46px] sm:leading-[66px] md:leading-[90px]">
+                Speight Design
+              </h2>
+
+              <div class="horizontal-line bg-[#ced1d659] h-[1px]"></div>
+
+              <div class="hero-bottom-content grid grid-cols-1 sm:grid-cols-12 gap-3 sm:gap-4 text-white">
+                <p class="text-[14px] sm:text-[16px] sm:col-span-3 flex gap-2.5 items-center leading-[22px]">
+                  <span class="block size-2 bg-white rounded-full"></span> Freshness in your house
+                </p>
+
+                <div class="sm:col-span-6">
+                  <p class="text-[15px] sm:text-[18px] max-w-[400px] font-normal leading-[22px] sm:leading-[25px]">
+                    We design thoughtful, modern interiors that balance form and function, creating spaces that feel both refined and deeply personal to the people who live in them.
+                  </p>
+                </div>
+              </div>
+            </div>
+        </div>
+      </header>
+
+      <div class="main-content relative h-auto">
+
+     <div class="page-wrapper relative z-[10]">
+
+
+    <section class="relative w-full  overflow-hidden px-4 sm:px-6 lg:px-10 py-10 sm:py-16 lg:py-20 flex items-center justify-center">
+
+  <div class="max-w-7xl mx-auto w-full relative h-[420px] sm:h-[550px] md:h-[650px] lg:h-[750px]">
+
+    <div class="absolute top-4 left-2 sm:top-10 sm:left-10 md:top-16 md:left-16 w-[90px] sm:w-[140px] md:w-[170px] lg:w-[200px] overflow-hidden">
+      <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/O64BvWg7qKxhwTsoaMwOogOpIws.png?scale-down-to=512&width=1200&height=1200" alt="interior hallway">
+    </div>
+
+    <div class="absolute top-4 right-2 sm:top-10 sm:right-10 md:top-16 md:right-16 w-[80px] sm:w-[140px] md:w-[170px] lg:w-[200px] overflow-hidden">
+      <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/2fWepbEq4iRUJ6C2yZ31VIckXc4.png?scale-down-to=1024&width=800&height=1200" alt="interior living room">
+    </div>
+
+    <div class="absolute bottom-4 left-2 sm:bottom-10 sm:left-10 md:bottom-16 md:left-16 w-[75px] sm:w-[125px] md:w-[155px] lg:w-[180px] overflow-hidden">
+      <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/C1JRgFChrNMq7qX0hGThqIhtS4.png?scale-down-to=1024&width=904&height=1200" alt="interior wall art">
+    </div>
+
+    <div class="absolute bottom-4 right-2 sm:bottom-10 sm:right-10 md:bottom-16 md:right-16 w-[90px] sm:w-[140px] md:w-[170px] lg:w-[200px] overflow-hidden">
+      <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/92QXDUHTXvpknuenDhJMWw8R40.png?scale-down-to=1024&width=1200&height=673" alt="interior sitting area">
+    </div>
+
+    <div class="absolute inset-0 z-10 flex items-center justify-center px-2">
+      <h2 class="max-w-[880px] font-normal leading-[30px] sm:leading-[44px] md:leading-[52px] lg:leading-[58px] text-[22px] text-center sm:text-[34px] md:text-[42px] lg:text-[48px] text-black tracking-tight font-primary">
+        From bold transformations to subtle enhancements, we craft spaces that reflect who you are and how you live.
+      </h2>
+    </div>
+
+  </div>
+
+   </section>
+
+
+
+
+   <section>
+
+    <div class="bg-[#5d5346] py-16 sm:py-24 md:py-[100px] lg:py-[125px]">
+
+        <div class="w-full px-4 sm:px-6 lg:px-10 max-w-7xl mx-auto space-y-8 sm:space-y-10 lg:space-y-12.5">
+
+            <div class="section-header text-white space-y-2.5">
+                <h2 class="font-primary font-normal text-[28px] sm:text-[36px] md:text-[42px] lg:text-[48px] leading-[34px] sm:leading-[44px] md:leading-[50px] lg:leading-[58px]">Our Projects</h2>
+                <p class="text-[13px] sm:text-[14px] font-normal leading-[19px] sm:leading-[20px]">A curated showcase of our finest interior <br class="hidden sm:block"> spaces, designed with elegance and detail</p>
+
+                <button
+  class="group relative inline-flex justify-center text-[13px] sm:text-[14px] font-normal leading-[20px]"
+>
+  <span
+    class="after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-full after:-translate-x-1/2 after:bg-white after:transition-all after:duration-500 after:ease-in-out group-hover:after:w-[20%]"
+  >
+    VIEW ALL PROJECTS
+  </span>
+</button>
+
+            </div>
+
+
+            <div class="section-content">
+                <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-5">
+
+
+                    <div class="project space-y-3 sm:space-y-3.75">
+
+
+                        <div class="project-image w-full h-[280px] sm:h-[380px] md:h-[450px] lg:h-[520px]">
+                            <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/aDtGubgGAeXhajjsmNZuK79LE.png?scale-down-to=1024&width=1200&height=686" alt="">
+                        </div>
+
+                        <h4 class="text-[18px] sm:text-[20px] lg:text-[22px] font-normal font-primary text-white leading-[22px] sm:leading-[24px] lg:leading-[26px]">Platinum Avior</h4>
+                        
+                    </div>
+
+                     <div class="project space-y-3 sm:space-y-3.75">
+
+
+                        <div class="project-image w-full h-[280px] sm:h-[380px] md:h-[450px] lg:h-[520px]">
+ <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/pqToNmi7VChoDbXOOdp4whAjGz4.png?scale-down-to=1024&width=1200&height=600" alt="">
+                        </div>
+
+                        <h4 class="text-[18px] sm:text-[20px] lg:text-[22px] font-normal font-primary text-white leading-[22px] sm:leading-[24px] lg:leading-[26px]">The Lumina Residence</h4>
+                        
+                        
+                    </div>
+
+                     <div class="project space-y-3 sm:space-y-3.75">
+
+
+                        <div class="project-image w-full h-[280px] sm:h-[380px] md:h-[450px] lg:h-[520px]">
+                            <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/oairuUrhUpnUEwoYnA5D25TiEeI.png?width=1200&height=800" alt="">
+                        </div>
+
+                          <h4 class="text-[18px] sm:text-[20px] lg:text-[22px] font-normal font-primary text-white leading-[22px] sm:leading-[24px] lg:leading-[26px]">24 Height</h4>
+                        
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+</section>
+
+
+<section>
+
+    <div class="py-16 sm:py-24 md:py-[100px] lg:py-[125px]">
+
+        <div class="w-full px-4 sm:px-6 lg:px-10 max-w-7xl mx-auto space-y-8 sm:space-y-10 lg:space-y-12.5">
+
+            <div class="section-header text-black space-y-2.5">
+                <h2 class="font-primary font-normal text-[28px] sm:text-[36px] md:text-[42px] lg:text-[48px] leading-[34px] sm:leading-[44px] md:leading-[50px] lg:leading-[58px]">What We Do</h2>
+                <p class="text-[13px] sm:text-[14px] font-normal leading-[19px] sm:leading-[20px]">We design refined, functional interiors  <br class="hidden sm:block"> that blend style, comfort, and purpose.</p>
+
+                <!-- <button
+  class="group relative inline-flex justify-center text-[13px] sm:text-[14px] font-normal leading-[20px]"
+>
+  <span
+    class="after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-full after:-translate-x-1/2 after:bg-white after:transition-all after:duration-500 after:ease-in-out group-hover:after:w-[20%]"
+  >
+    VIEW ALL PROJECTS
+  </span>
+</button> -->
+
+            </div>
+
+
+            <div class="section-content">
+                <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 lg:gap-5">
+
+
+                    <div class="project space-y-3 sm:space-y-3.75">
+
+
+                        <div class="project-image hidden md:block  w-full h-[280px] sm:h-[380px] md:h-[450px] lg:h-[520px]">
+                            
+                        </div>
+
+                       
+                    </div>
+
+                     <div class="project space-y-3 sm:space-y-3.75">
+
+
+                        <div class="project-image w-full h-[280px] sm:h-[380px] md:h-[450px] lg:h-[270px]">
+ <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/T6geNXuDqq1KVexrgVr7YFywx4.png?scale-down-to=1024&width=1200&height=802" alt="">
+                        </div>
+
+                        <h4 class="text-[18px] sm:text-[20px] lg:text-[22px] font-normal font-primary  leading-[22px] sm:leading-[24px] lg:leading-[26px]">Full-Service <br> Interior Design</h4>
+                        
+                        
+                    </div>
+
+                     <div class="project space-y-3 sm:space-y-3.75">
+
+
+                        <div class="project-image w-full h-[280px] sm:h-[380px] md:h-[450px] lg:h-[472px]">
+                            <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/s2qN6O29ysWc0QRn7Kdicvodk.png?scale-down-to=1024&width=800&height=1200" alt="">
+                        </div>
+
+                          <h4 class="text-[18px] sm:text-[20px] lg:text-[22px] font-normal font-primary  leading-[22px] sm:leading-[24px] lg:leading-[26px]">Space Planning & <br> Concept Development</h4>
+                        
+                    </div>
+
+                    <div class="project space-y-3 sm:space-y-3.75">
+
+
+                        <div class="project-image w-full h-[280px] sm:h-[380px] md:h-[450px] lg:h-[270px]">
+                            <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/h87knZPq10A9fQf0b5LZXH7Rvw.png?scale-down-to=1024&width=1200&height=1200" alt="">
+                        </div>
+
+                          <h4 class="text-[18px] sm:text-[20px] lg:text-[22px] font-normal font-primary  leading-[22px] sm:leading-[24px] lg:leading-[26px]">Interior Styling & <br> Furnishing</h4>
+                        
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+</section>
+<section>
+
+  <div class="py-16 sm:py-24 bg-[#ece7de] md:py-[100px] lg:py-[125px] relative">
+
+    <div class="w-full px-4 sm:px-6 lg:px-10 max-w-7xl mx-auto space-y-8 sm:space-y-10 lg:space-y-12.5">
+
+      <div class="section-header text-black space-y-2.5">
+        <h2 class="font-primary font-normal text-[28px] sm:text-[36px] md:text-[42px] lg:text-[48px] leading-[34px] text-center sm:leading-[44px] md:leading-[50px] lg:leading-[58px]">Testimonials</h2>
+      </div>
+
+      <div class="section-content">
+
+        <div class="w-full grid grid-cols-1 sm:grid-cols-12 gap-6 sm:gap-2.5">
+
+          <div class="testimonial-left sm:col-span-3 flex justify-center">
+            <img class="w-[160px] h-[200px] sm:w-[180px] sm:h-[230px] lg:w-[214px] lg:h-[270px] object-cover" src="https://framerusercontent.com/images/2P3x9R8dhLT2yUfnUhseIgGEk.png?scale-down-to=512&width=1200&height=1200" alt="">
+          </div>
+
+          <div class="sm:col-span-9 overflow-hidden">
+            <div id="testimonialArea" class="swiper testimonialSwiper" style="cursor: none;">
+              <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                  <div class="flex flex-col sm:flex-row gap-6 sm:gap-4">
+                    <div class="testimonial-content-left w-full sm:w-[70%] space-y-4 sm:space-y-[25px]">
+                      <h4 class="text-[20px] sm:text-[24px] lg:text-[28px] font-primary font-normal leading-[26px] sm:leading-[30px] lg:leading-[34px]">A perfect balance of <br class="hidden sm:block"> elegance and functionality.</h4>
+                      <p class="text-[13px] sm:text-[14px] max-w-[400px] font-normal leading-[19px] sm:leading-[20px]">"From the first consultation to the final reveal, the process was seamless. They paid attention to the smallest details while keeping the bigger vision in mind. Our home now feels cohesive, calm, and timeless."</p>
+                      <p class="text-[13px] sm:text-[14px] font-normal leading-[20px]">Rohan Malhotra</p>
+                    </div>
+                    <div class="testimonial-content-right w-full sm:w-[30%]">
+                      <img class="w-full h-[200px] sm:h-full object-cover" src="https://framerusercontent.com/images/nNK7Gw1ycxUucx9Oz8LOVmTdafU.png?scale-down-to=1024&width=900&height=1200" alt="">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="flex flex-col sm:flex-row gap-6 sm:gap-4">
+                    <div class="testimonial-content-left w-full sm:w-[70%] space-y-4 sm:space-y-[25px]">
+                      <h4 class="text-[20px] sm:text-[24px] lg:text-[28px] font-primary font-normal leading-[26px] sm:leading-[30px] lg:leading-[34px]">Every corner feels <br class="hidden sm:block"> personal and intentional.</h4>
+                      <p class="text-[13px] sm:text-[14px] max-w-[400px] font-normal leading-[19px] sm:leading-[20px]">"They truly listened to what we wanted and translated it into a space that feels like us. Professional, thoughtful, and incredibly talented team."</p>
+                      <p class="text-[13px] sm:text-[14px] font-normal leading-[20px]">Ananya Kapoor</p>
+                    </div>
+                    <div class="testimonial-content-right w-full sm:w-[30%]">
+                      <img class="w-full h-[200px] sm:h-full object-cover" src="https://framerusercontent.com/images/aGaGiFVVmmuPDWPQax5Nqsa6sxU.png?scale-down-to=1024&width=800&height=1200" alt="">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="flex flex-col sm:flex-row gap-6 sm:gap-4">
+                    <div class="testimonial-content-left w-full sm:w-[70%] space-y-4 sm:space-y-[25px]">
+                      <h4 class="text-[20px] sm:text-[24px] lg:text-[28px] font-primary font-normal leading-[26px] sm:leading-[30px] lg:leading-[34px]">Exceeded every <br class="hidden sm:block"> expectation we had.</h4>
+                      <p class="text-[13px] sm:text-[14px] max-w-[400px] font-normal leading-[19px] sm:leading-[20px]">"The team's eye for detail and commitment to our vision made all the difference. We couldn't be happier with the final result."</p>
+                      <p class="text-[13px] sm:text-[14px] font-normal leading-[20px]">Vikram Singh Rathore</p>
+                    </div>
+                    <div class="testimonial-content-right w-full sm:w-[30%]">
+                      <img class="w-full h-[200px] sm:h-full object-cover" src="https://framerusercontent.com/images/sU24OqYUdpw1XvluTke1268bw.png?scale-down-to=1024&width=904&height=1200" alt="">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="dragCursor" class="fixed top-0 left-0 z-[999] pointer-events-none flex items-center justify-center rounded-full bg-black text-white text-[12px] font-normal uppercase tracking-wide" style="width: 90px; height: 90px; opacity: 0; transform: translate(-50%, -50%) scale(0);">
+    Drag
+  </div>
+
+</section>
+
+
+<section>
+
+    <div class=" py-16 sm:py-24 md:py-[100px] lg:py-[125px]">
+
+        <div class="w-full px-4 sm:px-6 lg:px-10 max-w-7xl mx-auto space-y-8 sm:space-y-10 lg:space-y-12.5">
+
+            <div class="section-header text-black text-center space-y-2.5">
+                <h2 class="font-primary font-normal text-[28px] sm:text-[36px] md:text-[42px] lg:text-[48px] leading-[34px] sm:leading-[44px] md:leading-[50px] lg:leading-[58px]">Journal</h2>
+                <p class="text-[13px] sm:text-[14px] font-normal leading-[19px] sm:leading-[20px]">Insights, ideas, and inspiration  <br class="hidden sm:block"> from our world of interior design.</p>
+
+                <!-- <button
+  class="group relative inline-flex justify-center text-[13px] sm:text-[14px] font-normal leading-[20px]"
+>
+  <span
+    class="after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-full after:-translate-x-1/2 after:bg-white after:transition-all after:duration-500 after:ease-in-out group-hover:after:w-[20%]"
+  >
+    VIEW ALL PROJECTS
+  </span>
+</button> -->
+
+            </div>
+
+
+            <div class="section-content">
+                <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-5">
+
+
+                    <div class="project space-y-3 sm:space-y-3.75">
+
+
+                        <div class="project-image w-full h-[280px] sm:h-[380px] md:h-[450px] lg:h-[315px]">
+                            <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/KISQbq1TEZFjuJMfZ0Gb7hTXoI.png?scale-down-to=1024&width=1200&height=1200" alt="">
+                        </div>
+
+                        <h4 class="text-[18px] sm:text-[20px] lg:text-[22px] font-normal font-primary  leading-[22px] sm:leading-[24px] lg:leading-[26px]">Modern Luxury in Interior Design</h4>
+                        
+                    </div>
+
+                     <div class="project space-y-3 sm:space-y-3.75">
+
+
+                        <div class="project-image w-full h-[280px] sm:h-[380px] md:h-[450px] lg:h-[507px]">
+ <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/OxrwN4foa5ceufLjznXGuVD1sk.png?width=1199&height=903" alt="">
+                        </div>
+
+                        <h4 class="text-[18px] sm:text-[20px] lg:text-[22px] font-normal font-primary text-black leading-[22px] sm:leading-[24px] lg:leading-[26px]">The Power of Neutral Palettes</h4>
+                        
+                        
+                    </div>
+
+                     <div class="project space-y-3 sm:space-y-3.75">
+
+
+                        <div class="project-image w-full h-[280px] sm:h-[380px] md:h-[450px] lg:h-[315px]">
+                            <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/B4wRK0oEiOLQhDFFqz0BnjXo1E.png?width=906&height=1200" alt="">
+                        </div>
+
+                          <h4 class="text-[18px] sm:text-[20px] lg:text-[22px] font-normal font-primary  leading-[22px] sm:leading-[24px] lg:leading-[26px]">The Role of Materials in Timeless Interiors</h4>
+                        
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+</section>
+
+
+<section>
+
+    <div class=" py-16 sm:py-24 md:py-[100px] lg:py-[125px] h-screen relative">
+
+        <img class="absolute w-full h-full inset-0 object-cover" src="https://framerusercontent.com/images/z2cc7T82bbxpYe1eoVpei49E9w.png?width=1200&height=1200" alt="">
+
+        <div class="hero-overlay absolute inset-0"></div>
+        <div class="cta-overlay-content absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 space-y-2.5  flex flex-col items-center text-white">
+
+            <h3 class="font-primary font-normal text-[28px] sm:text-[36px] md:text-[42px] lg:text-[48px] leading-[34px] sm:leading-[44px] text-center md:leading-[50px] lg:leading-[58px]">Let’s Design Something <br> Exceptional</h3>
+
+            <p class="text-[13px] sm:text-[14px] font-normal leading-[19px] sm:leading-[20px]">Ready to transform your space into something truly refined and intentional? <br> Let’s bring your vision to life with thoughtful design and timeless detail.</p>
+
+               <button
+  class="group relative inline-flex justify-center text-[13px] sm:text-[14px] font-normal leading-[20px]"
+>
+  <span
+    class="after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-full after:-translate-x-1/2 after:bg-white after:transition-all after:duration-500 after:ease-in-out group-hover:after:w-[20%]"
+  >
+    GET IN TOUCH
+  </span>
+</button>
+        </div>
+
+       
+
+
+    </div>
+
+
+
+</section>
+     </div>
+
+
+<footer class="w-full  sticky bottom-0!  bg-white">
+
+  <div class="w-full px-4 sm:px-6 lg:px-10 pt-16 sm:pt-24 lg:pt-32 pb-8">
+
+    <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-6">
+
+      <div class="space-y-4 sm:space-y-6">
+        <p class="text-[13px] sm:text-[14px] text-black/50 font-normal">Menu</p>
+        <ul class="space-y-2 sm:space-y-3">
+          <li><a href="#!" class="text-[20px] sm:text-[26px] lg:text-[30px] font-normal text-black leading-tight block hover:opacity-60 transition-opacity">Homepage</a></li>
+          <li><a href="#!" class="text-[20px] sm:text-[26px] lg:text-[30px] font-normal text-black leading-tight block hover:opacity-60 transition-opacity">Studio</a></li>
+          <li><a href="#!" class="text-[20px] sm:text-[26px] lg:text-[30px] font-normal text-black leading-tight block hover:opacity-60 transition-opacity">Projects</a></li>
+          <li><a href="#!" class="text-[20px] sm:text-[26px] lg:text-[30px] font-normal text-black leading-tight block hover:opacity-60 transition-opacity">Expertise</a></li>
+          <li><a href="#!" class="text-[20px] sm:text-[26px] lg:text-[30px] font-normal text-black leading-tight block hover:opacity-60 transition-opacity">Insights</a></li>
+          <li><a href="#!" class="text-[20px] sm:text-[26px] lg:text-[30px] font-normal text-black leading-tight block hover:opacity-60 transition-opacity">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="space-y-4 sm:space-y-6">
+        <p class="text-[13px] sm:text-[14px] text-black/50 font-normal">Social</p>
+        <ul class="space-y-2 sm:space-y-3">
+          <li><a href="#!" class="text-[20px] sm:text-[26px] lg:text-[30px] font-normal text-black leading-tight block hover:opacity-60 transition-opacity">Facebook</a></li>
+          <li><a href="#!" class="text-[20px] sm:text-[26px] lg:text-[30px] font-normal text-black leading-tight block hover:opacity-60 transition-opacity">Instagram</a></li>
+          <li><a href="#!" class="text-[20px] sm:text-[26px] lg:text-[30px] font-normal text-black leading-tight block hover:opacity-60 transition-opacity">X (Twitter)</a></li>
+          <li><a href="#!" class="text-[20px] sm:text-[26px] lg:text-[30px] font-normal text-black leading-tight block hover:opacity-60 transition-opacity">Youtube</a></li>
+        </ul>
+      </div>
+
+      <div class="space-y-6 sm:space-y-8">
+        <div class="space-y-2 sm:space-y-3">
+          <p class="text-[13px] sm:text-[14px] text-black/50 font-normal">E-mail</p>
+          <p class="text-[16px] sm:text-[18px] lg:text-[20px] font-normal text-black">hello@speightdesign.com</p>
+        </div>
+        <div class="space-y-2 sm:space-y-3">
+          <p class="text-[13px] sm:text-[14px] text-black/50 font-normal">Address</p>
+          <p class="text-[16px] sm:text-[18px] lg:text-[20px] font-normal text-black leading-snug">120 Marine Drive, Nariman Point, Mumbai - India</p>
+        </div>
+      </div>
+
+      <div class="space-y-6 sm:space-y-8">
+        <div class="space-y-2 sm:space-y-3">
+          <p class="text-[13px] sm:text-[14px] text-black/50 font-normal">Phone Number</p>
+          <p class="text-[16px] sm:text-[18px] lg:text-[20px] font-normal text-black">+91 98765 43210</p>
+        </div>
+        <div class="space-y-2 sm:space-y-3">
+          <p class="text-[13px] sm:text-[14px] text-black/50 font-normal">Working Hours</p>
+          <p class="text-[16px] sm:text-[18px] lg:text-[20px] font-normal text-black leading-snug">Mon-Fri/09:30 - 18:00<br>Close on Public Holidays</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mt-20 sm:mt-32 lg:mt-40">
+
+      <div class="flex items-center gap-4 sm:gap-6">
+        <div class="flex-1 h-px bg-black/15"></div>
+        <div class="text-center shrink-0">
+         <img class="w-[120px]" src="./assets/img/logo/logo.png" alt="">
+        </div>
+        <div class="flex-1 h-px bg-black/15"></div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-0 mt-8 sm:mt-10 text-[12px] sm:text-[13px] text-black/70">
+        <p class="flex items-center gap-2">
+          <span>©2026 Speight Design</span>
+          <span class="w-1 h-1 rounded-full bg-black/40"></span>
+          <span>Made by Raino Studios</span>
+        </p>
+        <a href="#!" class="hover:opacity-60 transition-opacity">Terms Of Service</a>
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<script>
+  const testimonialSwiper = new Swiper(".testimonialSwiper", {
+    speed: 700,
+    grabCursor: false,
+    loop: true,
+    spaceBetween: 40,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+  });
+
+  const dragCursor = document.getElementById("dragCursor");
+  const swiperArea = document.getElementById("testimonialArea");
+
+  gsap.set(dragCursor, { xPercent: -50, yPercent: -50 });
+
+  const xTo = gsap.quickTo(dragCursor, "x", { duration: 0.5, ease: "power3" });
+  const yTo = gsap.quickTo(dragCursor, "y", { duration: 0.5, ease: "power3" });
+
+  window.addEventListener("mousemove", (e) => {
+    xTo(e.clientX);
+    yTo(e.clientY);
+  });
+
+  swiperArea.addEventListener("mouseenter", () => {
+    gsap.to(dragCursor, { opacity: 1, scale: 1, duration: 0.4, ease: "power3.out" });
+  });
+
+  swiperArea.addEventListener("mouseleave", () => {
+    gsap.to(dragCursor, { opacity: 0, scale: 0, duration: 0.4, ease: "power3.out" });
+  });
+
+  swiperArea.addEventListener("mousedown", () => {
+    gsap.to(dragCursor, { scale: 1.3, duration: 0.3, ease: "power2.out" });
+  });
+
+  swiperArea.addEventListener("mouseup", () => {
+    gsap.to(dragCursor, { scale: 1, duration: 0.3, ease: "power2.out" });
+  });
+</script>
+
+
+
+      </div>
+    </div>
+
+    <script>
+      const swiper = new Swiper(".mySwiper", {
+        speed: 1000,
+        effect: "slide",
+        grabCursor: true,
+        pagination: false,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        touchRatio: 1,
+        resistanceRatio: 0.85,
+        followFinger: true,
+        longSwipes: true,
+        longSwipesRatio: 0.3,
+        threshold: 5,
+      });
+
+      const sideMenu = document.getElementById("sideMenu");
+      const menuOverlay = document.getElementById("menuOverlay");
+      const openMenuBtn = document.getElementById("openMenuBtn");
+      const closeMenuBtn = document.getElementById("closeMenuBtn");
+
+      function openMenu() {
+        sideMenu.classList.remove("-translate-x-full");
+        menuOverlay.classList.remove("hidden");
+      }
+
+      function closeMenu() {
+        sideMenu.classList.add("-translate-x-full");
+        menuOverlay.classList.add("hidden");
+      }
+
+      openMenuBtn.addEventListener("click", openMenu);
+      closeMenuBtn.addEventListener("click", closeMenu);
+      menuOverlay.addEventListener("click", closeMenu);
+    </script>
+  </body>
+</html>
