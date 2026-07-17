@@ -37,50 +37,72 @@
     </style>
   </head>
   <body>
-    <div class="root relative overflow-hidden">
+    <div class="root relative">
 
-        <div id="sideMenu" class="fixed top-0 flex flex-col justify-between p-5 sm:p-6 left-0 z-[100] w-full sm:w-[400px] bg-white h-[100svh] -translate-x-full transition-transform duration-500 ease-in-out">
+      <!-- Intro Loader Animation -->
+<div id="introLoader" class="fixed inset-0 z-[500] bg-white overflow-hidden">
+  <div id="introImg1" class="absolute left-1/2 top-1/2 w-[220px] h-[300px] sm:w-[260px] sm:h-[350px] overflow-hidden opacity-0">
+    <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/pqToNmi7VChoDbXOOdp4whAjGz4.png?scale-down-to=1024&width=1200&height=600" alt="">
+  </div>
+  <div id="introImg2" class="absolute left-1/2 top-1/2 w-[340px] h-[460px] sm:w-[420px] sm:h-[560px] overflow-hidden opacity-0">
+    <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/oairuUrhUpnUEwoYnA5D25TiEeI.png?width=1200&height=800" alt="">
+  </div>
+  <div id="introImg3" class="absolute left-1/2 top-1/2 w-[460px] h-[620px] sm:w-[560px] sm:h-[720px] overflow-hidden opacity-0">
+    <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/IaVcYeEdcZnfOMACnHKhRG2eA.jpg?width=3840&height=2879" alt="">
+  </div>
+</div>
 
-            <div class="menu-top flex justify-between items-center">
-                <img class="w-[50px] sm:w-[60px]" src="./assets/img/logo/logo.png" alt="">
-                <button id="closeMenuBtn" class="close-btn p-2.5 border-[1px] rounded-full border-[#ced1d659]">
+      <div id="customCursor" class="fixed top-0 left-0 z-[999] pointer-events-none flex items-center justify-center rounded-full bg-black text-white text-[12px] font-normal uppercase tracking-wide opacity-0" style="width: 110px; height: 110px; transform: translate(-50%, -50%) scale(0);">
+  <span id="customCursorText">View</span>
+</div>
+
+    <!-- Side Menu -->
+        <div id="sideMenu" class="fixed top-0 flex flex-col justify-between p-6 sm:p-8 left-0 z-[100] w-full sm:w-[420px] bg-white h-[100svh] -translate-x-full transition-transform duration-500 ease-in-out">
+
+            <div class="menu-top flex justify-between items-start">
+                <img class="w-20" src="./assets/img/logo/logo.png" alt="">
+                <button id="closeMenuBtn" class="close-btn p-2.5 border-[1px] rounded-full border-[#ced1d659] shrink-0">
                     <i class="ri-close-line text-[18px] leading-none block"></i>
                 </button>
             </div>
 
-            <ul class="menu-middle space-y-2.5 sm:space-y-3.5 font-normal text-[36px] sm:text-[48px] md:text-[56px] leading-[42px] sm:leading-[54px] md:leading-[62px]">
-                <li>Home</li>
-                <li>Works</li>
-                <li>Services</li>
-                <li>About</li>
-                <li>Contact</li>
+            <ul class="menu-middle space-y-2 sm:space-y-2.5 font-normal text-[24px] sm:text-[30px] md:text-[34px] leading-[30px] sm:leading-[36px] md:leading-[40px] text-black">
+                <li><a href="#home" class="menu-link cursor-pointer hover:opacity-50 transition-opacity block">Home</a></li>
+                <li><a href="#our-projects" class="menu-link cursor-pointer hover:opacity-50 transition-opacity block">Our Projects</a></li>
+                <li><a href="#what-we-do" class="menu-link cursor-pointer hover:opacity-50 transition-opacity block">What We Do</a></li>
+                <li><a href="#testimonials" class="menu-link cursor-pointer hover:opacity-50 transition-opacity block">Testimonials</a></li>
+                <li><a href="#journal" class="menu-link cursor-pointer hover:opacity-50 transition-opacity block">Journal</a></li>
+                <li><a href="#contact" class="menu-link cursor-pointer hover:opacity-50 transition-opacity block">Contact</a></li>
             </ul>
 
-            <div class="py-6 space-y-2.5 border-t border-t-[#ced1d666]">
-                <ul class="text-[14px] flex gap-3.5 font-medium leading-[17px]">
-                    <li>Instagram</li>
-                    <li>X</li>
-                    <li>Linkedin</li>
+            <div class="pt-6 space-y-3 border-t border-t-[#ced1d666]">
+                <ul class="text-[13px] sm:text-[14px] flex gap-4 font-medium tracking-[0.5px] uppercase text-black/70">
+                    <li class="hover:text-black transition-colors cursor-pointer">Instagram</li>
+                    <li class="hover:text-black transition-colors cursor-pointer">X</li>
+                    <li class="hover:text-black transition-colors cursor-pointer">Linkedin</li>
                 </ul>
-                <p class="text-[14px] font-medium leading-[17px]">contact@speightdesign.com</p>
+                <p class="text-[14px] sm:text-[15px] font-normal leading-[20px] text-black/80">siddhantpurandare83@gmail.com</p>
             </div>
         </div>
-
         <div id="menuOverlay" class="fixed inset-0 bg-black/40 z-[90] hidden"></div>
 
-       <header class="relative">
-     <nav class="py-4 px-4 sm:px-6 z-[20] fixed w-full flex justify-between items-center">
-  <div class="nav-middle order-1 sm:order-2">
-    <img class="w-18 sm:w-20" src="/assets/img/logo/logo-white.png" alt="" />
-  </div>
+        <!-- Home Section -->
+       <header class="relative" id="home">
+     <nav id="mainNav" class="py-4 px-4 sm:px-6 z-[20] fixed w-full flex justify-between items-center transition-transform duration-500 ease-in-out">
+ 
 
   <div id="openMenuBtn" class="nav-left order-2 sm:order-1 cursor-pointer bg-white px-3 sm:px-3.5 leading-none py-2.5 flex items-center gap-2 sm:gap-2.5 rounded-full">
     <i class="ri-menu-line text-[18px] leading-none block"></i>
     <span class="text-csm leading-4">Menu</span>
   </div>
 
-  <div class="nav-right order-3 hidden sm:block">
-    <button class="h-[36px] sm:h-[38px] bg-white px-3.5 sm:px-4 rounded-full font-normal text-[13px] sm:text-csm leading-[19px]">
+   <!-- <div class="nav-middle order-1 sm:order-2 relative w-18 sm:w-20">
+  <img id="logoDark" class="w-18 sm:w-20  opacity-0 transition-opacity duration-300" src="/assets/img/logo/logo.png" alt="" />
+  <img id="logoWhite" class="w-18 sm:w-20 absolute inset-0 opacity-100 transition-opacity duration-300" src="/assets/img/logo/logo-white.png" alt="" />
+</div> -->
+
+  <div class="nav-right order-3 block">
+    <button class="h-[38px] bg-white px-3.5 sm:px-4 rounded-full font-medium text-[13px] sm:text-csm leading-[19px]">
       Let's Connect
     </button>
   </div>
@@ -103,33 +125,37 @@
 
         <div class="hero-content absolute bottom-[30px] sm:bottom-[45px] md:bottom-[60px] w-full z-[30]">
             <div class="px-4 sm:px-6 space-y-5 sm:space-y-6 md:space-y-8">
-              <h2 class="text-[42px] sm:text-[64px] md:text-[88px] lg:text-[112px] uppercase font-medium text-white leading-[46px] sm:leading-[66px] md:leading-[90px]">
-                Speight Design
+              <h2 class="split text-[42px] font-primary sm:text-[64px] md:text-[88px] lg:text-[112px]  font-medium text-white leading-[46px] sm:leading-[66px] md:leading-[90px]">
+               speight designs
+
               </h2>
 
               <div class="horizontal-line bg-[#ced1d659] h-[1px]"></div>
 
               <div class="hero-bottom-content grid grid-cols-1 sm:grid-cols-12 gap-3 sm:gap-4 text-white">
                 <p class="text-[14px] sm:text-[16px] sm:col-span-3 flex gap-2.5 items-center leading-[22px]">
-                  <span class="block size-2 bg-white rounded-full"></span> Freshness in your house
+                  <span class="block size-2 bg-white rounded-full"></span> Great Design. Flawless Execution.
                 </p>
 
                 <div class="sm:col-span-6">
                   <p class="text-[15px] sm:text-[18px] max-w-[400px] font-normal leading-[22px] sm:leading-[25px]">
-                    We design thoughtful, modern interiors that balance form and function, creating spaces that feel both refined and deeply personal to the people who live in them.
+                  We design with you in mind. Architecture, Interior Design, and PMC services crafted to bring your vision to life with thoughtful design and quality execution.
+
+
                   </p>
                 </div>
               </div>
             </div>
         </div>
-      </header>
+       </header>
 
-      <div class="main-content relative h-auto">
+      <div class="main-content  relative ">
 
-     <div class="page-wrapper relative z-[10]">
+       <div class="page-wrapper relative z-[10]">
 
 
-    <section class="relative w-full  overflow-hidden px-4 sm:px-6 lg:px-10 py-10 sm:py-16 lg:py-20 flex items-center justify-center">
+    <!-- Statement Section -->
+    <section class="relative w-full bg-white  overflow-hidden px-4 sm:px-6 lg:px-10 py-10 sm:py-16 lg:py-20 flex items-center justify-center">
 
   <div class="max-w-7xl mx-auto w-full relative h-[420px] sm:h-[550px] md:h-[650px] lg:h-[750px]">
 
@@ -150,8 +176,8 @@
     </div>
 
     <div class="absolute inset-0 z-10 flex items-center justify-center px-2">
-      <h2 class="max-w-[880px] font-normal leading-[30px] sm:leading-[44px] md:leading-[52px] lg:leading-[58px] text-[22px] text-center sm:text-[34px] md:text-[42px] lg:text-[48px] text-black tracking-tight font-primary">
-        From bold transformations to subtle enhancements, we craft spaces that reflect who you are and how you live.
+      <h2 class="split max-w-[880px] font-normal leading-[30px] sm:leading-[44px] md:leading-[52px] lg:leading-[58px] text-[22px] text-center sm:text-[34px] md:text-[42px] lg:text-[48px] text-black tracking-tight font-primary">
+        From concept to completion, we craft interiors that reflect who you are and how you live.
       </h2>
     </div>
 
@@ -161,29 +187,23 @@
 
 
 
-
-   <section>
+   <!-- Our Projects Section -->
+   <section id="our-projects">
 
     <div class="bg-[#5d5346] py-16 sm:py-24 md:py-[100px] lg:py-[125px]">
 
         <div class="w-full px-4 sm:px-6 lg:px-10 max-w-7xl mx-auto space-y-8 sm:space-y-10 lg:space-y-12.5">
 
             <div class="section-header text-white space-y-2.5">
-                <h2 class="font-primary font-normal text-[28px] sm:text-[36px] md:text-[42px] lg:text-[48px] leading-[34px] sm:leading-[44px] md:leading-[50px] lg:leading-[58px]">Our Projects</h2>
-                <p class="text-[13px] sm:text-[14px] font-normal leading-[19px] sm:leading-[20px]">A curated showcase of our finest interior <br class="hidden sm:block"> spaces, designed with elegance and detail</p>
+    <h2 class="split font-primary font-normal text-[28px] sm:text-[36px] md:text-[42px] lg:text-[48px] leading-[34px] sm:leading-[44px] md:leading-[50px]">Our Projects</h2>
+    <p class="split max-w-[300px] sm:max-w-[380px] text-[13px] sm:text-[14px] font-normal leading-[19px] sm:leading-[20px]">A curated showcase of our finest interior spaces, crafted with bespoke design and flawless execution</p>
 
-                <button
-  class="group relative inline-flex justify-center text-[13px] sm:text-[14px] font-normal leading-[20px]"
->
-  <span
-    class="after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-full after:-translate-x-1/2 after:bg-white after:transition-all after:duration-500 after:ease-in-out group-hover:after:w-[20%]"
-  >
-    VIEW ALL PROJECTS
-  </span>
-</button>
-
-            </div>
-
+    <button class="group relative inline-flex justify-center text-[13px] sm:text-[14px] font-normal leading-[20px]">
+      <span class="after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-full after:-translate-x-1/2 after:bg-white after:transition-all after:duration-500 after:ease-in-out group-hover:after:w-[20%]">
+        VIEW ALL PROJECTS
+      </span>
+    </button>
+</div>
 
             <div class="section-content">
                 <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-5">
@@ -196,7 +216,7 @@
                             <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/aDtGubgGAeXhajjsmNZuK79LE.png?scale-down-to=1024&width=1200&height=686" alt="">
                         </div>
 
-                        <h4 class="text-[18px] sm:text-[20px] lg:text-[22px] font-normal font-primary text-white leading-[22px] sm:leading-[24px] lg:leading-[26px]">Platinum Avior</h4>
+                        <h4 class="split text-[18px] sm:text-[20px] lg:text-[22px] font-normal font-primary text-white leading-[22px] sm:leading-[24px] lg:leading-[26px]">Ulwe Skyline Residence</h4>
                         
                     </div>
 
@@ -207,7 +227,7 @@
  <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/pqToNmi7VChoDbXOOdp4whAjGz4.png?scale-down-to=1024&width=1200&height=600" alt="">
                         </div>
 
-                        <h4 class="text-[18px] sm:text-[20px] lg:text-[22px] font-normal font-primary text-white leading-[22px] sm:leading-[24px] lg:leading-[26px]">The Lumina Residence</h4>
+                        <h4 class="split text-[18px] sm:text-[20px] lg:text-[22px] font-normal font-primary text-white leading-[22px] sm:leading-[24px] lg:leading-[26px]">Vashi Apartment</h4>
                         
                         
                     </div>
@@ -219,7 +239,7 @@
                             <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/oairuUrhUpnUEwoYnA5D25TiEeI.png?width=1200&height=800" alt="">
                         </div>
 
-                          <h4 class="text-[18px] sm:text-[20px] lg:text-[22px] font-normal font-primary text-white leading-[22px] sm:leading-[24px] lg:leading-[26px]">24 Height</h4>
+                          <h4 class="split text-[18px] sm:text-[20px] lg:text-[22px] font-normal font-primary text-white leading-[22px] sm:leading-[24px] lg:leading-[26px]">Thane Penthouse</h4>
                         
                     </div>
 
@@ -240,25 +260,16 @@
 </section>
 
 
-<section>
+<!-- What We Do Section -->
+<section id="what-we-do">
 
-    <div class="py-16 sm:py-24 md:py-[100px] lg:py-[125px]">
+    <div class="py-16 bg-white sm:py-24 md:py-[100px] lg:py-[125px]">
 
         <div class="w-full px-4 sm:px-6 lg:px-10 max-w-7xl mx-auto space-y-8 sm:space-y-10 lg:space-y-12.5">
 
             <div class="section-header text-black space-y-2.5">
-                <h2 class="font-primary font-normal text-[28px] sm:text-[36px] md:text-[42px] lg:text-[48px] leading-[34px] sm:leading-[44px] md:leading-[50px] lg:leading-[58px]">What We Do</h2>
-                <p class="text-[13px] sm:text-[14px] font-normal leading-[19px] sm:leading-[20px]">We design refined, functional interiors  <br class="hidden sm:block"> that blend style, comfort, and purpose.</p>
-
-                <!-- <button
-  class="group relative inline-flex justify-center text-[13px] sm:text-[14px] font-normal leading-[20px]"
->
-  <span
-    class="after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-full after:-translate-x-1/2 after:bg-white after:transition-all after:duration-500 after:ease-in-out group-hover:after:w-[20%]"
-  >
-    VIEW ALL PROJECTS
-  </span>
-</button> -->
+                <h2 class="split font-primary font-normal text-[28px] sm:text-[36px] md:text-[42px] lg:text-[48px] leading-[34px] sm:leading-[44px] md:leading-[50px] lg:leading-[58px]">What We Do</h2>
+                <p class="split text-[13px] sm:text-[14px] font-normal leading-[19px] sm:leading-[20px]">Full-service interior design, from concept  <br class="hidden sm:block"> to styling and everything in between.</p>
 
             </div>
 
@@ -284,7 +295,7 @@
  <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/T6geNXuDqq1KVexrgVr7YFywx4.png?scale-down-to=1024&width=1200&height=802" alt="">
                         </div>
 
-                        <h4 class="text-[18px] sm:text-[20px] lg:text-[22px] font-normal font-primary  leading-[22px] sm:leading-[24px] lg:leading-[26px]">Full-Service <br> Interior Design</h4>
+                        <h4 class="split text-[18px] sm:text-[20px] lg:text-[22px] font-normal font-primary  leading-[22px] sm:leading-[24px] lg:leading-[26px]">Full-Service <br> Interior Design</h4>
                         
                         
                     </div>
@@ -296,7 +307,7 @@
                             <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/s2qN6O29ysWc0QRn7Kdicvodk.png?scale-down-to=1024&width=800&height=1200" alt="">
                         </div>
 
-                          <h4 class="text-[18px] sm:text-[20px] lg:text-[22px] font-normal font-primary  leading-[22px] sm:leading-[24px] lg:leading-[26px]">Space Planning & <br> Concept Development</h4>
+                          <h4 class="split text-[18px] sm:text-[20px] lg:text-[22px] font-normal font-primary  leading-[22px] sm:leading-[24px] lg:leading-[26px]">Space Planning & <br> Concept Development</h4>
                         
                     </div>
 
@@ -307,7 +318,7 @@
                             <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/h87knZPq10A9fQf0b5LZXH7Rvw.png?scale-down-to=1024&width=1200&height=1200" alt="">
                         </div>
 
-                          <h4 class="text-[18px] sm:text-[20px] lg:text-[22px] font-normal font-primary  leading-[22px] sm:leading-[24px] lg:leading-[26px]">Interior Styling & <br> Furnishing</h4>
+                          <h4 class="split text-[18px] sm:text-[20px] lg:text-[22px] font-normal font-primary  leading-[22px] sm:leading-[24px] lg:leading-[26px]">Interior Styling & <br> Furnishing</h4>
                         
                     </div>
 
@@ -326,21 +337,233 @@
 
 
 </section>
+
+
+
+<section id="about-studio">
+  <div class="pb-16 bg-white  sm:pb-24 md:pb-[100px] lg:pb-[125px]">
+
+     <div class="w-full px-4 sm:px-6 lg:px-10 max-w-7xl mx-auto space-y-8 sm:space-y-10 lg:space-y-12.5">
+
+      <div class="grid grid-cols-1 sm:grid-cols-12 items-end gap-6 sm:gap-6.25">
+
+        <div class="sm:col-span-8"> <img class="w-full" src="https://framerusercontent.com/images/VC4qwfmfo0MFJmeX4tEZEVbnjn8.png?width=1200&height=800" alt=""></div>
+        <div class="sm:col-span-4 space-y-2.5">
+
+           <h2 class="split font-primary font-normal text-[28px] sm:text-[36px] md:text-[42px] lg:text-[48px] leading-[34px] sm:leading-[44px] md:leading-[50px] lg:leading-[58px]">Our Studio</h2>
+                <p class="split text-[13px] sm:text-[14px] font-normal leading-[19px] sm:leading-[20px]">Speight Designs, a Mumbai based design studio was born out of a passion to transform people's lives by designing incredible spaces for them to live and work in. Sure to be a hassle free experience right from design consultation to installation. We design with you in mind. Give us a call to see what we can do for you.
+
+</p>
+
+                <button
+  class="group relative inline-flex justify-center text-[13px] sm:text-[14px] font-normal leading-[20px]"
+>
+  <span
+    class="after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-full after:-translate-x-1/2 after:bg-black after:transition-all after:duration-500 after:ease-in-out group-hover:after:w-[20%]"
+  >
+    VIEW ALL PROJECTS
+  </span>
+</button>
+        </div>
+      </div>
+
+     
+
+     </div>
+
+    
+
+
+  </div>
+
+</section>
+
+
 <section>
+
+   <div class="py-16 bg-[#ece7de] sm:py-24 md:py-[100px] lg:py-[125px]">
+
+    <div class="w-full px-4 sm:px-6 lg:px-10 max-w-7xl mx-auto space-y-8 sm:space-y-10 lg:space-y-12.5">
+
+      <div class="section-header max-w-[650px] mx-auto text-black space-y-2.5">
+                <h2 class="split text-center font-primary font-normal text-[28px] sm:text-[36px] md:text-[42px] lg:text-[48px] leading-[34px] sm:leading-[44px] md:leading-[50px] lg:leading-[58px]">Where design meets <br> everyday living.</h2>
+                
+
+            </div>
+
+
+
+            <div class="section-content">
+
+              <div class="relative">
+                <div class="swiper designSwiper" style="cursor: grab;">
+                  <div class="swiper-wrapper">
+
+                    <div class="swiper-slide !w-[260px] sm:!w-[340px] md:!w-[400px] lg:!w-[460px]">
+                      <div class="w-full h-[380px] sm:h-[460px] md:h-[520px] lg:h-[580px] overflow-hidden">
+                        <img class="w-full h-full object-cover" src="https://static.wixstatic.com/media/a1e977_754eb69c70624aacad99d065eabf75fd~mv2.jpg/v1/fit/w_960,h_1440,q_90,enc_avif,quality_auto/a1e977_754eb69c70624aacad99d065eabf75fd~mv2.jpg" alt="">
+                      </div>
+                    </div>
+
+                    <div class="swiper-slide !w-[260px] sm:!w-[340px] md:!w-[400px] lg:!w-[460px]">
+                      <div class="w-full h-[380px] sm:h-[460px] md:h-[520px] lg:h-[580px] overflow-hidden">
+                        <img class="w-full h-full object-cover" src="https://static.wixstatic.com/media/a1e977_35a953514da9492885030ccaa876a6c2~mv2.jpeg/v1/fit/w_900,h_1599,q_90,enc_avif,quality_auto/a1e977_35a953514da9492885030ccaa876a6c2~mv2.jpeg" alt="">
+                      </div>
+                    </div>
+
+                    <div class="swiper-slide !w-[260px] sm:!w-[340px] md:!w-[400px] lg:!w-[460px]">
+                      <div class="w-full h-[380px] sm:h-[460px] md:h-[520px] lg:h-[580px] overflow-hidden">
+                        <img class="w-full h-full object-cover" src="https://static.wixstatic.com/media/a1e977_67793995788846f4b0ce83a60742d849~mv2.jpeg/v1/fit/w_960,h_1280,q_90,enc_avif,quality_auto/a1e977_67793995788846f4b0ce83a60742d849~mv2.jpeg" alt="">
+                      </div>
+                    </div>
+
+                    <div class="swiper-slide !w-[260px] sm:!w-[340px] md:!w-[400px] lg:!w-[460px]">
+                      <div class="w-full h-[380px] sm:h-[460px] md:h-[520px] lg:h-[580px] overflow-hidden">
+                        <img class="w-full h-full object-cover" src="https://static.wixstatic.com/media/a1e977_37a0a532ff1646d5bb65b88a18e73cba~mv2.jpg/v1/fit/w_960,h_1440,q_90,enc_avif,quality_auto/a1e977_37a0a532ff1646d5bb65b88a18e73cba~mv2.jpg" alt="">
+                      </div>
+                    </div>
+
+                    <div class="swiper-slide !w-[260px] sm:!w-[340px] md:!w-[400px] lg:!w-[460px]">
+                      <div class="w-full h-[380px] sm:h-[460px] md:h-[520px] lg:h-[580px] overflow-hidden">
+                        <img class="w-full h-full object-cover" src="https://static.wixstatic.com/media/a1e977_87370d7368a44cf6ae08ff80385e295a~mv2.jpg/v1/fit/w_960,h_1440,q_90,enc_avif,quality_auto/a1e977_87370d7368a44cf6ae08ff80385e295a~mv2.jpg" alt="">
+                      </div>
+                    </div>
+
+                    <div class="swiper-slide !w-[260px] sm:!w-[340px] md:!w-[400px] lg:!w-[460px]">
+                      <div class="w-full h-[380px] sm:h-[460px] md:h-[520px] lg:h-[580px] overflow-hidden">
+                        <img class="w-full h-full object-cover" src="https://static.wixstatic.com/media/a1e977_4f9ade314a0e4339be8bf6b482ddb9c5~mv2.jpeg/v1/fill/w_1067,h_601,q_90,enc_avif,quality_auto/a1e977_4f9ade314a0e4339be8bf6b482ddb9c5~mv2.jpeg" alt="">
+                      </div>
+                    </div>
+
+                    <div class="swiper-slide !w-[260px] sm:!w-[340px] md:!w-[400px] lg:!w-[460px]">
+                      <div class="w-full h-[380px] sm:h-[460px] md:h-[520px] lg:h-[580px] overflow-hidden">
+                        <img class="w-full h-full object-cover" src="https://static.wixstatic.com/media/a1e977_b14e9e12aa6c49019a99e77c55de5cde~mv2.jpg/v1/fill/w_338,h_601,q_90,enc_avif,quality_auto/a1e977_b14e9e12aa6c49019a99e77c55de5cde~mv2.jpg" alt="">
+                      </div>
+                    </div>
+
+                    <div class="swiper-slide !w-[260px] sm:!w-[340px] md:!w-[400px] lg:!w-[460px]">
+                      <div class="w-full h-[380px] sm:h-[460px] md:h-[520px] lg:h-[580px] overflow-hidden">
+                        <img class="w-full h-full object-cover" src="https://static.wixstatic.com/media/a1e977_7101c72f11dd46b88e958e87d919ad10~mv2.jpg/v1/fit/w_800,h_1200,q_90,enc_avif,quality_auto/a1e977_7101c72f11dd46b88e958e87d919ad10~mv2.jpg" alt="">
+                      </div>
+                    </div>
+
+                    <div class="swiper-slide !w-[260px] sm:!w-[340px] md:!w-[400px] lg:!w-[460px]">
+                      <div class="w-full h-[380px] sm:h-[460px] md:h-[520px] lg:h-[580px] overflow-hidden">
+                        <img class="w-full h-full object-cover" src="https://static.wixstatic.com/media/a1e977_45898570f83b407f921d6ded6b2b23ad~mv2.jpg/v1/fit/w_1800,h_1200,q_90,enc_avif,quality_auto/a1e977_45898570f83b407f921d6ded6b2b23ad~mv2.jpg" alt="">
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class="designSwiperPagination flex justify-center  mt-8 sm:mt-10"></div>
+              </div>
+
+            </div>
+
+
+
+
+    </div>
+
+
+
+
+
+   </div>
+
+
+
+</section>
+
+<!-- About Us Section -->
+<section id="about-us">
+
+  <div class="py-16 sm:py-24 md:py-[100px] lg:py-[125px] bg-[#5d5346]">
+
+    <div class="w-full px-4 sm:px-6 lg:px-10 max-w-7xl mx-auto">
+
+      <div class="relative">
+
+        <!-- Image -->
+        <div class="w-full max-w-[400px] sm:ml-auto overflow-hidden">
+          <img class="w-full  object-cover" src="https://static.wixstatic.com/media/a1e977_2ffa64c908ae47a8913a804f535556c6~mv2.jpeg/v1/crop/x_0,y_0,w_1188,h_1485/fill/w_1120,h_1400,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/WhatsApp%20Image%202022-09-09%20at%203_10_51%20AM.jpeg" alt="Ar. Siddhant Purandare">
+        </div>
+
+        <!-- Overlapping white card -->
+        <div class="relative sm:absolute sm:left-0 sm:bottom-0 sm:top-auto mt-[-40px] sm:mt-0 w-[92%] sm:w-[420px] md:w-[460px] lg:w-[500px] bg-white px-6 sm:px-8 md:px-10 py-8 sm:py-10 md:py-12 space-y-5 sm:space-y-6">
+
+          <!-- <h2 class="split font-primary font-normal text-[26px] sm:text-[32px] md:text-[36px] leading-[30px] sm:leading-[36px] md:leading-[40px] text-black">About Us</h2> -->
+
+          <div class="space-y-3 sm:space-y-4">
+            <p class="split text-[13px] sm:text-[14px] font-medium tracking-[2px] uppercase text-black">Ar. Siddhant Purandare</p>
+
+            <p class="split text-[13px] sm:text-[14px] font-normal leading-[20px] sm:leading-[21px] text-black/70">Speight Designs, a Mumbai based design studio was born out of a passion to transform people's lives by designing incredible spaces for them to live and work in. Sure to be a hassle free experience right from design consultation to installation. We design with you in mind. Give us a call to see what we can do for you.</p>
+          </div>
+
+          <button
+            class="border border-black/70 px-5 sm:px-6 py-3 text-[12px] sm:text-[13px] font-normal tracking-[1px] uppercase text-black hover:bg-black hover:text-white transition-colors duration-300"
+          >
+            Schedule a Consultation
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+  .designSwiperPagination .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: #d9d4c9;
+    opacity: 1;
+    border-radius: 9999px;
+    transition: width 0.3s ease, background 0.3s ease;
+  }
+  .designSwiperPagination .swiper-pagination-bullet-active {
+    width: 32px;
+    background: #5d5346;
+    border-radius: 9999px;
+  }
+</style>
+
+<script>
+  new Swiper(".designSwiper", {
+    speed: 700,
+    slidesPerView: "auto",
+    spaceBetween: 20,
+    grabCursor: true,
+    loop: true,
+    centeredSlides: false,
+    pagination: {
+      el: ".designSwiperPagination",
+      clickable: true,
+    },
+  });
+</script>
+
+<!-- Testimonials Section -->
+<section id="testimonials">
 
   <div class="py-16 sm:py-24 bg-[#ece7de] md:py-[100px] lg:py-[125px] relative">
 
     <div class="w-full px-4 sm:px-6 lg:px-10 max-w-7xl mx-auto space-y-8 sm:space-y-10 lg:space-y-12.5">
 
       <div class="section-header text-black space-y-2.5">
-        <h2 class="font-primary font-normal text-[28px] sm:text-[36px] md:text-[42px] lg:text-[48px] leading-[34px] text-center sm:leading-[44px] md:leading-[50px] lg:leading-[58px]">Testimonials</h2>
+        <h2 class="split font-primary font-normal text-[28px] sm:text-[36px] md:text-[42px] lg:text-[48px] leading-[34px] text-center sm:leading-[44px] md:leading-[50px] lg:leading-[58px]">Testimonials</h2>
       </div>
 
       <div class="section-content">
 
         <div class="w-full grid grid-cols-1 sm:grid-cols-12 gap-6 sm:gap-2.5">
 
-          <div class="testimonial-left sm:col-span-3 flex justify-center">
+          <div class="testimonial-left hidden sm:col-span-3 sm:flex justify-center">
             <img class="w-[160px] h-[200px] sm:w-[180px] sm:h-[230px] lg:w-[214px] lg:h-[270px] object-cover" src="https://framerusercontent.com/images/2P3x9R8dhLT2yUfnUhseIgGEk.png?scale-down-to=512&width=1200&height=1200" alt="">
           </div>
 
@@ -351,8 +574,8 @@
                 <div class="swiper-slide">
                   <div class="flex flex-col sm:flex-row gap-6 sm:gap-4">
                     <div class="testimonial-content-left w-full sm:w-[70%] space-y-4 sm:space-y-[25px]">
-                      <h4 class="text-[20px] sm:text-[24px] lg:text-[28px] font-primary font-normal leading-[26px] sm:leading-[30px] lg:leading-[34px]">A perfect balance of <br class="hidden sm:block"> elegance and functionality.</h4>
-                      <p class="text-[13px] sm:text-[14px] max-w-[400px] font-normal leading-[19px] sm:leading-[20px]">"From the first consultation to the final reveal, the process was seamless. They paid attention to the smallest details while keeping the bigger vision in mind. Our home now feels cohesive, calm, and timeless."</p>
+                      <h4 class="split text-[20px] sm:text-[24px] lg:text-[28px] font-primary font-normal leading-[26px] sm:leading-[30px] lg:leading-[34px]">A perfect balance of <br class="hidden sm:block"> design and durability.</h4>
+                      <p class="split text-[13px] sm:text-[14px] max-w-[400px] font-normal leading-[19px] sm:leading-[20px]">"From the first consultation to the final reveal, Upscale Design Studio was seamless to work with. Our home now feels cohesive, calm, and completely us."</p>
                       <p class="text-[13px] sm:text-[14px] font-normal leading-[20px]">Rohan Malhotra</p>
                     </div>
                     <div class="testimonial-content-right w-full sm:w-[30%]">
@@ -364,8 +587,8 @@
                 <div class="swiper-slide">
                   <div class="flex flex-col sm:flex-row gap-6 sm:gap-4">
                     <div class="testimonial-content-left w-full sm:w-[70%] space-y-4 sm:space-y-[25px]">
-                      <h4 class="text-[20px] sm:text-[24px] lg:text-[28px] font-primary font-normal leading-[26px] sm:leading-[30px] lg:leading-[34px]">Every corner feels <br class="hidden sm:block"> personal and intentional.</h4>
-                      <p class="text-[13px] sm:text-[14px] max-w-[400px] font-normal leading-[19px] sm:leading-[20px]">"They truly listened to what we wanted and translated it into a space that feels like us. Professional, thoughtful, and incredibly talented team."</p>
+                      <h4 class="split text-[20px] sm:text-[24px] lg:text-[28px] font-primary font-normal leading-[26px] sm:leading-[30px] lg:leading-[34px]">Every corner feels <br class="hidden sm:block"> personal and intentional.</h4>
+                      <p class="split text-[13px] sm:text-[14px] max-w-[400px] font-normal leading-[19px] sm:leading-[20px]">"They truly listened to what we wanted and translated it into a home that feels like us. Professional, honest, and incredibly skilled team."</p>
                       <p class="text-[13px] sm:text-[14px] font-normal leading-[20px]">Ananya Kapoor</p>
                     </div>
                     <div class="testimonial-content-right w-full sm:w-[30%]">
@@ -377,8 +600,8 @@
                 <div class="swiper-slide">
                   <div class="flex flex-col sm:flex-row gap-6 sm:gap-4">
                     <div class="testimonial-content-left w-full sm:w-[70%] space-y-4 sm:space-y-[25px]">
-                      <h4 class="text-[20px] sm:text-[24px] lg:text-[28px] font-primary font-normal leading-[26px] sm:leading-[30px] lg:leading-[34px]">Exceeded every <br class="hidden sm:block"> expectation we had.</h4>
-                      <p class="text-[13px] sm:text-[14px] max-w-[400px] font-normal leading-[19px] sm:leading-[20px]">"The team's eye for detail and commitment to our vision made all the difference. We couldn't be happier with the final result."</p>
+                      <h4 class="split text-[20px] sm:text-[24px] lg:text-[28px] font-primary font-normal leading-[26px] sm:leading-[30px] lg:leading-[34px]">Exceeded every <br class="hidden sm:block"> expectation we had.</h4>
+                      <p class="split text-[13px] sm:text-[14px] max-w-[400px] font-normal leading-[19px] sm:leading-[20px]">"Thoughtful, detail-oriented, and always on time. Upscale Design Studio exceeded every expectation we had for our space."</p>
                       <p class="text-[13px] sm:text-[14px] font-normal leading-[20px]">Vikram Singh Rathore</p>
                     </div>
                     <div class="testimonial-content-right w-full sm:w-[30%]">
@@ -406,25 +629,16 @@
 </section>
 
 
-<section>
+<!-- Journal Section -->
+<section id="journal">
 
-    <div class=" py-16 sm:py-24 md:py-[100px] lg:py-[125px]">
+    <div class=" py-16 bg-white sm:py-24 md:py-[100px] lg:py-[125px]">
 
         <div class="w-full px-4 sm:px-6 lg:px-10 max-w-7xl mx-auto space-y-8 sm:space-y-10 lg:space-y-12.5">
 
             <div class="section-header text-black text-center space-y-2.5">
-                <h2 class="font-primary font-normal text-[28px] sm:text-[36px] md:text-[42px] lg:text-[48px] leading-[34px] sm:leading-[44px] md:leading-[50px] lg:leading-[58px]">Journal</h2>
-                <p class="text-[13px] sm:text-[14px] font-normal leading-[19px] sm:leading-[20px]">Insights, ideas, and inspiration  <br class="hidden sm:block"> from our world of interior design.</p>
-
-                <!-- <button
-  class="group relative inline-flex justify-center text-[13px] sm:text-[14px] font-normal leading-[20px]"
->
-  <span
-    class="after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-full after:-translate-x-1/2 after:bg-white after:transition-all after:duration-500 after:ease-in-out group-hover:after:w-[20%]"
-  >
-    VIEW ALL PROJECTS
-  </span>
-</button> -->
+                <h2 class="split font-primary font-normal text-[28px] sm:text-[36px] md:text-[42px] lg:text-[48px] leading-[34px] sm:leading-[44px] md:leading-[50px] lg:leading-[58px]">Journal</h2>
+                <p class="split text-[13px] sm:text-[14px] font-normal leading-[19px] sm:leading-[20px]">Insights, ideas, and inspiration  <br class="hidden sm:block"> from our world of interior design.</p>
 
             </div>
 
@@ -440,7 +654,7 @@
                             <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/KISQbq1TEZFjuJMfZ0Gb7hTXoI.png?scale-down-to=1024&width=1200&height=1200" alt="">
                         </div>
 
-                        <h4 class="text-[18px] sm:text-[20px] lg:text-[22px] font-normal font-primary  leading-[22px] sm:leading-[24px] lg:leading-[26px]">Modern Luxury in Interior Design</h4>
+                        <h4 class="split text-[18px] sm:text-[20px] lg:text-[22px] font-normal font-primary  leading-[22px] sm:leading-[24px] lg:leading-[26px]">Modern Luxury in Home Elevations</h4>
                         
                     </div>
 
@@ -451,7 +665,7 @@
  <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/OxrwN4foa5ceufLjznXGuVD1sk.png?width=1199&height=903" alt="">
                         </div>
 
-                        <h4 class="text-[18px] sm:text-[20px] lg:text-[22px] font-normal font-primary text-black leading-[22px] sm:leading-[24px] lg:leading-[26px]">The Power of Neutral Palettes</h4>
+                        <h4 class="split text-[18px] sm:text-[20px] lg:text-[22px] font-normal font-primary text-black leading-[22px] sm:leading-[24px] lg:leading-[26px]">Why Vastu Still Matters in Modern Homes</h4>
                         
                         
                     </div>
@@ -463,7 +677,7 @@
                             <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/B4wRK0oEiOLQhDFFqz0BnjXo1E.png?width=906&height=1200" alt="">
                         </div>
 
-                          <h4 class="text-[18px] sm:text-[20px] lg:text-[22px] font-normal font-primary  leading-[22px] sm:leading-[24px] lg:leading-[26px]">The Role of Materials in Timeless Interiors</h4>
+                          <h4 class="split text-[18px] sm:text-[20px] lg:text-[22px] font-normal font-primary  leading-[22px] sm:leading-[24px] lg:leading-[26px]">Choosing Materials for Timeless Construction</h4>
                         
                     </div>
 
@@ -484,21 +698,22 @@
 </section>
 
 
-<section>
+<!-- Contact Section -->
+<section id="contact">
 
     <div class=" py-16 sm:py-24 md:py-[100px] lg:py-[125px] h-screen relative">
 
-        <img class="absolute w-full h-full inset-0 object-cover" src="https://framerusercontent.com/images/z2cc7T82bbxpYe1eoVpei49E9w.png?width=1200&height=1200" alt="">
+        <img class="absolute w-full h-full inset-0 object-cover" src="https://framerusercontent.com/images/aDtGubgGAeXhajjsmNZuK79LE.png?width=1200&height=686" alt="">
 
         <div class="hero-overlay absolute inset-0"></div>
-        <div class="cta-overlay-content absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 space-y-2.5  flex flex-col items-center text-white">
+        <div class="cta-overlay-content absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 w-full  px-6 sm:px-4 space-y-3 sm:space-y-2.5 flex flex-col items-center text-white text-center">
 
-            <h3 class="font-primary font-normal text-[28px] sm:text-[36px] md:text-[42px] lg:text-[48px] leading-[34px] sm:leading-[44px] text-center md:leading-[50px] lg:leading-[58px]">Let’s Design Something <br> Exceptional</h3>
+            <h3 class="split font-primary font-normal text-[30px] sm:text-[36px] md:text-[42px] lg:text-[48px] leading-[36px] sm:leading-[44px] text-center md:leading-[50px] lg:leading-[58px]">Let's Design Something <br> Exceptional</h3>
 
-            <p class="text-[13px] sm:text-[14px] font-normal leading-[19px] sm:leading-[20px]">Ready to transform your space into something truly refined and intentional? <br> Let’s bring your vision to life with thoughtful design and timeless detail.</p>
+            <p class="split text-[13px] sm:text-[14px] font-normal leading-[19px] sm:leading-[20px] ">Ready to transform your space into something truly refined and personal? Let's <br class="hidden md:block"> bring your vision to life with thoughtful design and timeless detail.</p>
 
                <button
-  class="group relative inline-flex justify-center text-[13px] sm:text-[14px] font-normal leading-[20px]"
+  class="group relative inline-flex justify-center text-[13px] sm:text-[14px] font-normal leading-[20px] pt-1 sm:pt-0"
 >
   <span
     class="after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-full after:-translate-x-1/2 after:bg-white after:transition-all after:duration-500 after:ease-in-out group-hover:after:w-[20%]"
@@ -516,86 +731,93 @@
 
 
 </section>
-     </div>
+       </div>
 
 
-<footer class="w-full  sticky bottom-0!  bg-white">
+<!-- Footer Section -->
+<footer class="w-full bg-[#5d5346]  lg:sticky bottom-0 left-0 z-[-9]  ">
 
   <div class="w-full px-4 sm:px-6 lg:px-10 pt-16 sm:pt-24 lg:pt-32 pb-8">
 
-    <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-6">
+   
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-8 lg:gap-6 pb-12 sm:pb-16 border-b border-white/15">
 
       <div class="space-y-4 sm:space-y-6">
-        <p class="text-[13px] sm:text-[14px] text-black/50 font-normal">Menu</p>
+        <p class="text-[13px] sm:text-[14px] text-white/50 font-normal">Menu</p>
         <ul class="space-y-2 sm:space-y-3">
-          <li><a href="#!" class="text-[20px] sm:text-[26px] lg:text-[30px] font-normal text-black leading-tight block hover:opacity-60 transition-opacity">Homepage</a></li>
-          <li><a href="#!" class="text-[20px] sm:text-[26px] lg:text-[30px] font-normal text-black leading-tight block hover:opacity-60 transition-opacity">Studio</a></li>
-          <li><a href="#!" class="text-[20px] sm:text-[26px] lg:text-[30px] font-normal text-black leading-tight block hover:opacity-60 transition-opacity">Projects</a></li>
-          <li><a href="#!" class="text-[20px] sm:text-[26px] lg:text-[30px] font-normal text-black leading-tight block hover:opacity-60 transition-opacity">Expertise</a></li>
-          <li><a href="#!" class="text-[20px] sm:text-[26px] lg:text-[30px] font-normal text-black leading-tight block hover:opacity-60 transition-opacity">Insights</a></li>
-          <li><a href="#!" class="text-[20px] sm:text-[26px] lg:text-[30px] font-normal text-black leading-tight block hover:opacity-60 transition-opacity">Contact</a></li>
+          <li><a href="#home" class="text-[20px] sm:text-[24px] lg:text-[26px] font-normal text-white leading-tight block hover:opacity-60 transition-opacity">Home</a>
+          <li><a href="#our-projects" class="text-[20px] sm:text-[24px] lg:text-[26px] font-normal text-white leading-tight block hover:opacity-60 transition-opacity">Our Projects</a></li>
+          <li><a href="#what-we-do" class="text-[20px] sm:text-[24px] lg:text-[26px] font-normal text-white leading-tight block hover:opacity-60 transition-opacity">What We Do</a></li>
+          <li><a href="#testimonials" class="text-[20px] sm:text-[24px] lg:text-[26px] font-normal text-white leading-tight block hover:opacity-60 transition-opacity">Testimonials</a></li>
+          <li><a href="#journal" class="text-[20px] sm:text-[24px] lg:text-[26px] font-normal text-white leading-tight block hover:opacity-60 transition-opacity">Journal</a></li>
+          <li><a href="#contact" class="text-[20px] sm:text-[24px] lg:text-[26px] font-normal text-white leading-tight block hover:opacity-60 transition-opacity">Contact</a></li>
         </ul>
       </div>
 
       <div class="space-y-4 sm:space-y-6">
-        <p class="text-[13px] sm:text-[14px] text-black/50 font-normal">Social</p>
-        <ul class="space-y-2 sm:space-y-3">
-          <li><a href="#!" class="text-[20px] sm:text-[26px] lg:text-[30px] font-normal text-black leading-tight block hover:opacity-60 transition-opacity">Facebook</a></li>
-          <li><a href="#!" class="text-[20px] sm:text-[26px] lg:text-[30px] font-normal text-black leading-tight block hover:opacity-60 transition-opacity">Instagram</a></li>
-          <li><a href="#!" class="text-[20px] sm:text-[26px] lg:text-[30px] font-normal text-black leading-tight block hover:opacity-60 transition-opacity">X (Twitter)</a></li>
-          <li><a href="#!" class="text-[20px] sm:text-[26px] lg:text-[30px] font-normal text-black leading-tight block hover:opacity-60 transition-opacity">Youtube</a></li>
+        <p class="text-[13px] sm:text-[14px] text-white/50 font-normal">Contact</p>
+        <div class="space-y-4 sm:space-y-5">
+          <div class="space-y-1">
+            <p class="text-[13px] text-white/50">E-mail</p>
+            <a href="mailto:siddhantpurandare83@gmail.com" class="text-[16px] sm:text-[18px] font-normal text-white break-words hover:opacity-60 transition-opacity block">siddhantpurandare83@gmail.com</a>
+          </div>
+          <div class="space-y-1">
+            <p class="text-[13px] text-white/50">Phone</p>
+            <a href="tel:+919833996371" class="text-[16px] sm:text-[18px] font-normal text-white hover:opacity-60 transition-opacity block">+91 98339 96371</a>
+          </div>
+          <div class="space-y-1">
+            <p class="text-[13px] text-white/50">Working Hours</p>
+            <p class="text-[16px] sm:text-[18px] font-normal text-white leading-snug">Mon–Sat / 10:00 – 19:00</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-4 sm:space-y-6">
+        <p class="text-[13px] sm:text-[14px] text-white/50 font-normal">Follow</p>
+        <ul class="flex flex-wrap gap-2.5">
+          <li>
+            <a href="#!" class="w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center rounded-full border border-white/25 text-white hover:bg-white hover:text-[#5d5346] transition-colors duration-300">
+              <i class="ri-instagram-line text-[17px]"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#!" class="w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center rounded-full border border-white/25 text-white hover:bg-white hover:text-[#5d5346] transition-colors duration-300">
+              <i class="ri-twitter-x-line text-[17px]"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#!" class="w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center rounded-full border border-white/25 text-white hover:bg-white hover:text-[#5d5346] transition-colors duration-300">
+              <i class="ri-linkedin-fill text-[17px]"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#!" class="w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center rounded-full border border-white/25 text-white hover:bg-white hover:text-[#5d5346] transition-colors duration-300">
+              <i class="ri-facebook-fill text-[17px]"></i>
+            </a>
+          </li>
         </ul>
-      </div>
-
-      <div class="space-y-6 sm:space-y-8">
-        <div class="space-y-2 sm:space-y-3">
-          <p class="text-[13px] sm:text-[14px] text-black/50 font-normal">E-mail</p>
-          <p class="text-[16px] sm:text-[18px] lg:text-[20px] font-normal text-black">hello@speightdesign.com</p>
-        </div>
-        <div class="space-y-2 sm:space-y-3">
-          <p class="text-[13px] sm:text-[14px] text-black/50 font-normal">Address</p>
-          <p class="text-[16px] sm:text-[18px] lg:text-[20px] font-normal text-black leading-snug">120 Marine Drive, Nariman Point, Mumbai - India</p>
-        </div>
-      </div>
-
-      <div class="space-y-6 sm:space-y-8">
-        <div class="space-y-2 sm:space-y-3">
-          <p class="text-[13px] sm:text-[14px] text-black/50 font-normal">Phone Number</p>
-          <p class="text-[16px] sm:text-[18px] lg:text-[20px] font-normal text-black">+91 98765 43210</p>
-        </div>
-        <div class="space-y-2 sm:space-y-3">
-          <p class="text-[13px] sm:text-[14px] text-black/50 font-normal">Working Hours</p>
-          <p class="text-[16px] sm:text-[18px] lg:text-[20px] font-normal text-black leading-snug">Mon-Fri/09:30 - 18:00<br>Close on Public Holidays</p>
-        </div>
       </div>
 
     </div>
 
-    <div class="mt-20 sm:mt-32 lg:mt-40">
-
-      <div class="flex items-center gap-4 sm:gap-6">
-        <div class="flex-1 h-px bg-black/15"></div>
-        <div class="text-center shrink-0">
-         <img class="w-[120px]" src="./assets/img/logo/logo.png" alt="">
-        </div>
-        <div class="flex-1 h-px bg-black/15"></div>
-      </div>
-
-      <div class="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-0 mt-8 sm:mt-10 text-[12px] sm:text-[13px] text-black/70">
-        <p class="flex items-center gap-2">
-          <span>©2026 Speight Design</span>
-          <span class="w-1 h-1 rounded-full bg-black/40"></span>
-          <span>Made by Raino Studios</span>
-        </p>
-        <a href="#!" class="hover:opacity-60 transition-opacity">Terms Of Service</a>
-      </div>
-
+    <div class="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-0 mt-8 sm:mt-10 text-[12px] sm:text-[13px] text-white/60">
+      <p class="flex items-center gap-2">
+        <span>©2026 Speight Design</span>
+        <span class="w-1 h-1 rounded-full bg-white/40"></span>
+        <span>Made by Raino Studios</span>
+      </p>
+      <a href="#!" class="hover:opacity-60 transition-opacity">Terms Of Service</a>
     </div>
 
   </div>
 
 </footer>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/SplitText.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
 
 <script>
   const testimonialSwiper = new Swiper(".testimonialSwiper", {
@@ -639,9 +861,33 @@
   });
 </script>
 
+<!-- SplitText word-reveal animation -->
+<script>
+  gsap.registerPlugin(SplitText, ScrollTrigger);
 
+  document.fonts.ready.then(() => {
+    document.querySelectorAll(".split").forEach((el) => {
+      let split = SplitText.create(el, {
+        type: "words, lines",   // only split into words and lines (not characters)
+        mask: "lines",          // wraps each line in an overflow:clip mask (v3.13+)
+        linesClass: "line++",   // adds "line" class + incremented "line1", "line2"...
+      });
 
-      </div>
+      gsap.from(split.words, {
+        yPercent: 200,
+        opacity: 0,
+        duration: 1.2,
+        ease: "expo.out",
+        stagger: 0.08,
+        scrollTrigger: {
+          trigger: el,
+          start: "top 88%",
+        },
+      });
+    });
+  });
+</script>
+
     </div>
 
     <script>
@@ -680,6 +926,130 @@
       openMenuBtn.addEventListener("click", openMenu);
       closeMenuBtn.addEventListener("click", closeMenu);
       menuOverlay.addEventListener("click", closeMenu);
+
+      // Menu links -> smooth scroll to section
+      const menuLinks = document.querySelectorAll(".menu-link");
+
+      menuLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const targetId = link.getAttribute("href");
+          const targetEl = document.querySelector(targetId);
+
+          closeMenu();
+
+          setTimeout(() => {
+            if (targetEl) {
+              targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+          }, 400);
+        });
+      });
     </script>
+ <script>
+  const mainNav = document.getElementById("mainNav");
+  const logoDark = document.getElementById("logoDark");
+  const logoWhite = document.getElementById("logoWhite");
+  let lastScrollY = window.scrollY;
+  const scrollThreshold = 10; // chhota jitter ignore karne ke liye
+
+  window.addEventListener("scroll", () => {
+    const currentScrollY = window.scrollY;
+    const delta = currentScrollY - lastScrollY;
+
+    if (Math.abs(delta) > scrollThreshold) {
+      if (delta > 0 && currentScrollY > 80) {
+        // scrolling down -> hide navbar
+        gsap.to(mainNav, { yPercent: -120, duration: 0.5, ease: "power3.out" });
+      } else {
+        // scrolling up -> show navbar
+        gsap.to(mainNav, { yPercent: 0, duration: 0.5, ease: "power3.out" });
+      }
+      lastScrollY = currentScrollY;
+    }
+
+    // blur + logo switch based on scroll position
+    if (currentScrollY > 80) {
+      mainNav.classList.add("nav-blur");
+      if (logoDark) logoDark.style.opacity = 1;
+      if (logoWhite) logoWhite.style.opacity = 0;
+    } else {
+      mainNav.classList.remove("nav-blur");
+      if (logoDark) logoDark.style.opacity = 0;
+      if (logoWhite) logoWhite.style.opacity = 1;
+    }
+  });
+</script>
+
+
+<script>
+  const customCursor = document.getElementById("customCursor");
+  const cursorText = document.getElementById("customCursorText");
+
+  gsap.set(customCursor, { xPercent: -50, yPercent: -50 });
+
+  const cursorX = gsap.quickTo(customCursor, "x", { duration: 0.5, ease: "power3" });
+  const cursorY = gsap.quickTo(customCursor, "y", { duration: 0.5, ease: "power3" });
+
+  window.addEventListener("mousemove", (e) => {
+    cursorX(e.clientX);
+    cursorY(e.clientY);
+  });
+
+  function bindCursor(selector, text) {
+    document.querySelectorAll(selector).forEach((el) => {
+      el.addEventListener("mouseenter", () => {
+        cursorText.textContent = text;
+        gsap.to(customCursor, { opacity: 1, scale: 1, duration: 0.4, ease: "power3.out" });
+      });
+      el.addEventListener("mouseleave", () => {
+        gsap.to(customCursor, { opacity: 0, scale: 0, duration: 0.4, ease: "power3.out" });
+      });
+    });
+  }
+
+  bindCursor("#our-projects .project-image", "View Project");
+  bindCursor("#journal .project-image", "Read More");
+</script>
+<script>
+  document.body.style.overflow = "hidden";
+
+  gsap.set("#introImg1, #introImg2, #introImg3", { xPercent: -50, yPercent: -50 });
+  gsap.set("#introImg1", { y: 300 });
+  gsap.set("#introImg2", { y: 300 });
+  gsap.set("#introImg3", { y: 300 });
+  gsap.set("#introLoader", { clipPath: "inset(0% 0% 0% 0%)" });
+
+  const introTl = gsap.timeline({
+    defaults: { ease: "expo.out" },
+    onComplete: () => {
+      document.body.style.overflow = "";
+      const loader = document.getElementById("introLoader");
+      loader.style.display = "none";
+    }
+  });
+
+  introTl
+    // Image 1 - bottom se center
+    .to("#introImg1", { y: 0, opacity: 1, duration: 0.8 })
+
+    // Image 2 - bottom se center, bigger, img1 ke upar overlap
+    .to("#introImg2", { y: 0, opacity: 1, duration: 0.8 }, "+=0.35")
+
+    // Image 3 - bottom se center, sabse bada, img2 ke upar overlap
+    .to("#introImg3", { y: 0, opacity: 1, duration: 0.9 }, "+=0.35")
+
+    // Image 3 grows to fill entire screen -> khud hero background ban jaati hai
+    .to("#introImg3", { width: "100vw", height: "100svh", duration: 1.1, ease: "power2.inOut" }, "+=0.3")
+
+    // Curtain wipe: loader neeche se upar wipe hoke real hero swiper reveal karta hai
+    .to("#introLoader", {
+      clipPath: "inset(0% 0% 100% 0%)",
+      duration: 1.2,
+      ease: "power3.inOut",
+      pointerEvents: "none"
+    }, "+=0.25");
+</script>
+
   </body>
 </html>
