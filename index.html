@@ -95,7 +95,7 @@
           <div class="mx-auto sm:mx-0 backdrop-blur-[10px] bg-[rgba(16,16,20,0.6)] sm:bg-transparent sm:backdrop-blur-none rounded-[10px] sm:rounded-none px-5 sm:px-6 lg:px-10 py-4 sm:py-6 flex items-center justify-between">
 
             <!-- Logo -->
-            <a href="#home" class="nav-logo w-[60px] md:w-[80px]">
+            <a href="#home" class="nav-logo w-[70px] md:w-[80px]">
               <img src="./assets/img/logo/logo-white.png" alt="Speight Designs logo">
             </a>
 
@@ -119,7 +119,18 @@
         </nav>
 
         <div class="hero-frame h-[100svh]">
-          <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/IaVcYeEdcZnfOMACnHKhRG2eA.jpg?width=3840&height=2879" alt="Speight Designs hero interior">
+          <div class="swiper heroSwiper h-full">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/IaVcYeEdcZnfOMACnHKhRG2eA.jpg?width=3840&height=2879" alt="Speight Designs hero interior 1">
+              </div>
+              <div class="swiper-slide">
+                <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/5cee2EXdbBi2Qd6r09KHa7ZJXw.jpg?width=2500&height=2500" alt="Speight Designs hero interior 3">
+              </div>
+             
+              
+            </div>
+          </div>
         </div>
 
         <div class="hero-overlay z-[10] absolute inset-0 bg-black/40"></div>
@@ -653,6 +664,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/SplitText.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+
+    <!-- ============================= -->
+    <!-- Hero slider -->
+    <!-- ============================= -->
+    <script>
+      new Swiper(".heroSwiper", {
+        speed: 1000,
+        effect: "fade",
+        fadeEffect: { crossFade: true },
+        loop: true,
+        grabCursor: true,
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
+      });
+    </script>
 
     <!-- ============================= -->
     <!-- Design gallery swiper -->
