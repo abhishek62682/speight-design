@@ -11,6 +11,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
       rel="stylesheet"
@@ -26,18 +30,66 @@
     <style type="text/tailwindcss">
       @theme {
         --color-clifford: #da373d;
-        --font-secondary: "Instrument Sans", sans-serif;
+        --font-secondary: "Poppins", sans-serif;
         --font-primary:"Cinzel Decorative", serif;
         --text-csm: 16px;
       }
 
       body {
-        font-family: "Instrument Sans", sans-serif;
+        font-family: "Poppins", sans-serif;
       }
+    </style>
+
+    <style>
+      /* ---------- INTRO LOADER ---------- */
+      #introLoader {
+        position: fixed;
+        inset: 0;
+        z-index: 300;
+        background: #ece7de;
+        overflow: hidden;
+      }
+
+      /*
+        Each .intro-img is ALWAYS full-viewport-sized (inset:0) — its visible
+        "card" look comes purely from a CSS scale transform, never from
+        width/height/top/left. That means GSAP only ever animates transform
+        (scale, y) and opacity/border-radius/box-shadow — all cheap,
+        GPU-composited properties. No layout reflow = no glitch, even when
+        the third image grows to fill the whole screen.
+      */
+      .intro-img {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        transform-origin: center center;
+        will-change: transform, opacity;
+        border-radius: 6px;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+        backface-visibility: hidden;
+      }
+      .intro-img img { width:100%; height:100%; object-fit:cover; display:block; }
+
+      .intro-img-1 { z-index: 1; }
+      .intro-img-2 { z-index: 2; }
+      .intro-img-3 { z-index: 3; }
     </style>
   </head>
   <body>
     <div class="root relative">
+
+      <!-- ================= INTRO LOADER ================= -->
+      <div id="introLoader">
+        <div class="intro-img intro-img-1">
+          <img src="https://framerusercontent.com/images/O64BvWg7qKxhwTsoaMwOogOpIws.png?scale-down-to=512&width=1200&height=1200" alt="">
+        </div>
+        <div class="intro-img intro-img-2">
+          <img src="https://framerusercontent.com/images/s2qN6O29ysWc0QRn7Kdicvodk.png?scale-down-to=1024&width=800&height=1200" alt="">
+        </div>
+        <div class="intro-img intro-img-3">
+          <img src="https://framerusercontent.com/images/IaVcYeEdcZnfOMACnHKhRG2eA.jpg?width=3840&height=2879" alt="">
+        </div>
+      </div>
 
       <div id="customCursor" class="fixed top-0 left-0 z-[999] pointer-events-none flex items-center justify-center rounded-full bg-black text-white text-[12px] font-normal uppercase tracking-wide opacity-0" style="width: 110px; height: 110px; transform: translate(-50%, -50%) scale(0);">
   <span id="customCursorText">View</span>
@@ -96,7 +148,9 @@
 </nav>
 
         <div class="hero-frame h-[100svh]">
-          <div class="swiper mySwiper h-full">
+
+          <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/IaVcYeEdcZnfOMACnHKhRG2eA.jpg?width=3840&height=2879" alt="">
+          <!-- <div class="swiper mySwiper h-full">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/IaVcYeEdcZnfOMACnHKhRG2eA.jpg?width=3840&height=2879" alt="">
@@ -105,7 +159,7 @@
                 <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/5cee2EXdbBi2Qd6r09KHa7ZJXw.jpg?width=2500&height=2500" alt="">
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
 
         <div class="hero-overlay z-[10] absolute inset-0 bg-black/20"></div>
@@ -142,7 +196,7 @@
 
 
     <!-- Statement Section -->
-    <section class="relative w-full bg-white  overflow-hidden px-4 sm:px-6 lg:px-10 py-10 sm:py-16 lg:py-20 flex items-center justify-center">
+    <section class="relative w-full bg-white min-h-[100svh]  overflow-hidden px-4 sm:px-6 lg:px-10 py-25 sm:py-16 lg:py-20 flex items-center justify-center">
 
   <div class="max-w-7xl mx-auto w-full relative h-[420px] sm:h-[550px] md:h-[650px] lg:h-[750px]">
 
@@ -177,13 +231,13 @@
    <!-- Our Projects Section -->
    <section id="our-projects">
 
-    <div class="bg-[#5d5346] py-16 sm:py-24 md:py-[100px] lg:py-[125px]">
+    <div class="bg-[#5d5346] py-25 sm:py-24 md:py-[100px] lg:py-[125px]">
 
-        <div class="w-full px-4 sm:px-6 lg:px-10 max-w-7xl mx-auto space-y-8 sm:space-y-10 lg:space-y-12.5">
+        <div class="w-full px-4 sm:px-6 lg:px-10 max-w-7xl mx-auto space-y-[50px] md:space-y-10 lg:space-y-12.5">
 
-            <div class="section-header text-white space-y-2.5">
+            <div class="section-header text-center md:text-left text-white space-y-2.5">
                 <h2 class="split font-primary font-normal text-[28px] sm:text-[36px] md:text-[42px] lg:text-[48px] leading-[34px] sm:leading-[44px] md:leading-[50px] lg:leading-[58px]">Our Projects</h2>
-                <p class="split max-w-[300px] sm:max-w-[380px] text-[13px] sm:text-[14px] font-normal leading-[19px] sm:leading-[20px]">A curated showcase of our finest interior spaces, crafted with bespoke design and flawless execution</p>
+                <p class="split max-w-[300px] text-center md:text-left mx-auto sm:max-w-[380px] text-[14px] font-normal leading-[20px]">A curated showcase of our finest interior spaces, crafted with bespoke design and flawless execution</p>
 
                 <button
   class="group relative inline-flex justify-center text-[13px] sm:text-[14px] font-normal leading-[20px]"
@@ -199,13 +253,13 @@
 
 
             <div class="section-content">
-                <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-5">
+                <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6.25 lg:gap-5">
 
 
                     <div class="project space-y-3 sm:space-y-3.75">
 
 
-                        <div class="project-image w-full h-[280px] sm:h-[380px] md:h-[450px] lg:h-[520px]">
+                        <div class="project-image w-full h-[520px] sm:h-[380px] md:h-[450px] lg:h-[520px]">
                             <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/aDtGubgGAeXhajjsmNZuK79LE.png?scale-down-to=1024&width=1200&height=686" alt="">
                         </div>
 
@@ -216,7 +270,7 @@
                      <div class="project space-y-3 sm:space-y-3.75">
 
 
-                        <div class="project-image w-full h-[280px] sm:h-[380px] md:h-[450px] lg:h-[520px]">
+                        <div class="project-image w-full h-[520px] sm:h-[380px] md:h-[450px] lg:h-[520px]">
  <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/pqToNmi7VChoDbXOOdp4whAjGz4.png?scale-down-to=1024&width=1200&height=600" alt="">
                         </div>
 
@@ -228,7 +282,7 @@
                      <div class="project space-y-3 sm:space-y-3.75">
 
 
-                        <div class="project-image w-full h-[280px] sm:h-[380px] md:h-[450px] lg:h-[520px]">
+                        <div class="project-image w-full h-[520px] sm:h-[380px] md:h-[450px] lg:h-[520px]">
                             <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/oairuUrhUpnUEwoYnA5D25TiEeI.png?width=1200&height=800" alt="">
                         </div>
 
@@ -256,19 +310,19 @@
 <!-- What We Do Section -->
 <section id="what-we-do">
 
-    <div class="py-16 bg-white sm:py-24 md:py-[100px] lg:py-[125px]">
+    <div class="py-25 bg-white sm:py-24 md:py-[100px] lg:py-[125px]">
 
         <div class="w-full px-4 sm:px-6 lg:px-10 max-w-7xl mx-auto space-y-8 sm:space-y-10 lg:space-y-12.5">
 
             <div class="section-header text-black space-y-2.5">
                 <h2 class="split font-primary font-normal text-[28px] sm:text-[36px] md:text-[42px] lg:text-[48px] leading-[34px] sm:leading-[44px] md:leading-[50px] lg:leading-[58px]">What We Do</h2>
-                <p class="split max-w-[280px] sm:max-w-[340px] text-[13px] sm:text-[14px] font-normal leading-[19px] sm:leading-[20px]">Full-service interior design, from concept to styling and everything in between.</p>
+                <p class="split max-w-[280px] sm:max-w-[340px] text-[14px] font-nomral leading-[20px] sm:leading-[20px]">Full-service interior design, from concept to styling and everything in between.</p>
 
             </div>
 
 
             <div class="section-content">
-                <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 lg:gap-5">
+                <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6.25 lg:gap-5">
 
 
                     <div class="project space-y-3 sm:space-y-3.75">
@@ -288,7 +342,7 @@
  <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/T6geNXuDqq1KVexrgVr7YFywx4.png?scale-down-to=1024&width=1200&height=802" alt="">
                         </div>
 
-                        <h4 class="split text-[18px] sm:text-[20px] lg:text-[22px] font-normal font-primary  leading-[22px] sm:leading-[24px] lg:leading-[26px]">Full-Service <br> Interior Design</h4>
+                        <h4 class="split text-[18px] sm:text-[20px] lg:text-[22px] font-normal font-primary  leading-[22px] sm:leading-[24px] lg:leading-[26px]">Full-Service <br  /> Interior Design</h4>
                         
                         
                     </div>
@@ -334,9 +388,9 @@
 
 
 <section id="about-studio">
-  <div class="pb-16 bg-white  sm:pb-24 md:pb-[100px] lg:pb-[125px]">
+  <div class="pb-25 bg-white md:pb-[100px] lg:pb-[125px]">
 
-     <div class="w-full px-4 sm:px-6 lg:px-10 max-w-7xl mx-auto space-y-8 sm:space-y-10 lg:space-y-12.5">
+     <div class="w-full px-6.25 lg:px-10 max-w-7xl mx-auto space-y-8 sm:space-y-10 lg:space-y-12.5">
 
       <div class="grid grid-cols-1 sm:grid-cols-12 items-end gap-6 sm:gap-6.25">
 
@@ -344,7 +398,7 @@
         <div class="sm:col-span-4 space-y-2.5">
 
            <h2 class="split font-primary font-normal text-[28px] sm:text-[36px] md:text-[42px] lg:text-[48px] leading-[34px] sm:leading-[44px] md:leading-[50px] lg:leading-[58px]">Our Studio</h2>
-                <p class="split text-[13px] sm:text-[14px] font-normal leading-[19px] sm:leading-[20px]">Speight Designs, a Mumbai based design studio was born out of a passion to transform people's lives by designing incredible spaces for them to live and work in. Sure to be a hassle free experience right from design consultation to installation. We design with you in mind. Give us a call to see what we can do for you.
+                <p class="text-[13px] sm:text-[14px] font-normal leading-[19px] sm:leading-[20px]">Speight Designs, a Mumbai based design studio was born out of a passion to transform people's lives by designing incredible spaces for them to live and work in. Sure to be a hassle free experience right from design consultation to installation. We design with you in mind. Give us a call to see what we can do for you.
 
 </p>
 
@@ -374,9 +428,9 @@
 
 <section>
 
-   <div class="py-16 bg-[#ece7de] sm:py-24 md:py-[100px] lg:py-[125px]">
+   <div class=" bg-[#ece7de] py-25 md:py-[100px] lg:py-[125px]">
 
-    <div class="w-full px-4 sm:px-6 lg:px-10 max-w-7xl mx-auto space-y-8 sm:space-y-10 lg:space-y-12.5">
+    <div class="w-full px-4 sm:px-6 lg:px-10 max-w-7xl mx-auto space-y-12.5 lg:space-y-12.5">
 
       <div class="section-header max-w-[650px] mx-auto text-black space-y-2.5">
                 <h2 class="split text-center font-primary font-normal text-[28px] sm:text-[36px] md:text-[42px] lg:text-[48px] leading-[34px] sm:leading-[44px] md:leading-[50px] lg:leading-[58px]">Where design meets <br> everyday living.</h2>
@@ -565,45 +619,55 @@
               <div class="swiper-wrapper">
 
                 <div class="swiper-slide">
-                  <div class="flex flex-col sm:flex-row gap-6 sm:gap-4">
+                  <div class="flex flex-wrap-reverse sm:flex-nowrap sm:flex-row justify-center sm:justify-between items-center sm:items-start gap-6 sm:gap-4 text-center md:text-left">
                     <div class="testimonial-content-left w-full sm:w-[70%] space-y-4 sm:space-y-[25px]">
                       <h4 class="split text-[20px] sm:text-[24px] lg:text-[28px] font-primary font-normal leading-[26px] sm:leading-[30px] lg:leading-[34px]">A perfect balance of <br class="hidden sm:block"> design and durability.</h4>
-                      <p class="split text-[13px] sm:text-[14px] max-w-[400px] font-normal leading-[19px] sm:leading-[20px]">"From the first consultation to the final reveal, Upscale Design Studio was seamless to work with. Our home now feels cohesive, calm, and completely us."</p>
+                      <p class="split text-[13px] sm:text-[14px] max-w-[400px] mx-auto md:mx-0 font-normal leading-[19px] sm:leading-[20px]">"From the first consultation to the final reveal, Upscale Design Studio was seamless to work with. Our home now feels cohesive, calm, and completely us."</p>
                       <p class="text-[13px] sm:text-[14px] font-normal leading-[20px]">Rohan Malhotra</p>
                     </div>
-                    <div class="testimonial-content-right w-full sm:w-[30%]">
-                      <img class="w-full h-[200px] sm:h-full object-cover" src="https://framerusercontent.com/images/nNK7Gw1ycxUucx9Oz8LOVmTdafU.png?scale-down-to=1024&width=900&height=1200" alt="">
+                    <div class="testimonial-content-right w-[150px] h-[200px] shrink-0">
+                      <img class="w-[150px] h-[200px] object-cover" src="https://framerusercontent.com/images/nNK7Gw1ycxUucx9Oz8LOVmTdafU.png?scale-down-to=1024&width=900&height=1200" alt="">
                     </div>
                   </div>
                 </div>
 
                 <div class="swiper-slide">
-                  <div class="flex flex-col sm:flex-row gap-6 sm:gap-4">
+                  <div class="flex flex-wrap-reverse sm:flex-nowrap sm:flex-row justify-center sm:justify-between items-center sm:items-start gap-6 sm:gap-4 text-center md:text-left">
                     <div class="testimonial-content-left w-full sm:w-[70%] space-y-4 sm:space-y-[25px]">
                       <h4 class="split text-[20px] sm:text-[24px] lg:text-[28px] font-primary font-normal leading-[26px] sm:leading-[30px] lg:leading-[34px]">Every corner feels <br class="hidden sm:block"> personal and intentional.</h4>
-                      <p class="split text-[13px] sm:text-[14px] max-w-[400px] font-normal leading-[19px] sm:leading-[20px]">"They truly listened to what we wanted and translated it into a home that feels like us. Professional, honest, and incredibly skilled team."</p>
+                      <p class="split text-[13px] sm:text-[14px] max-w-[400px] mx-auto md:mx-0 font-normal leading-[19px] sm:leading-[20px]">"They truly listened to what we wanted and translated it into a home that feels like us. Professional, honest, and incredibly skilled team."</p>
                       <p class="text-[13px] sm:text-[14px] font-normal leading-[20px]">Ananya Kapoor</p>
                     </div>
-                    <div class="testimonial-content-right w-full sm:w-[30%]">
-                      <img class="w-full h-[200px] sm:h-full object-cover" src="https://framerusercontent.com/images/aGaGiFVVmmuPDWPQax5Nqsa6sxU.png?scale-down-to=1024&width=800&height=1200" alt="">
+                    <div class="testimonial-content-right w-[150px] h-[200px] shrink-0">
+                      <img class="w-[150px] h-[200px] object-cover" src="https://framerusercontent.com/images/aGaGiFVVmmuPDWPQax5Nqsa6sxU.png?scale-down-to=1024&width=800&height=1200" alt="">
                     </div>
                   </div>
                 </div>
 
                 <div class="swiper-slide">
-                  <div class="flex flex-col sm:flex-row gap-6 sm:gap-4">
+                  <div class="flex flex-wrap-reverse sm:flex-nowrap sm:flex-row justify-center sm:justify-between items-center sm:items-start gap-6 sm:gap-4 text-center md:text-left">
                     <div class="testimonial-content-left w-full sm:w-[70%] space-y-4 sm:space-y-[25px]">
                       <h4 class="split text-[20px] sm:text-[24px] lg:text-[28px] font-primary font-normal leading-[26px] sm:leading-[30px] lg:leading-[34px]">Exceeded every <br class="hidden sm:block"> expectation we had.</h4>
-                      <p class="split text-[13px] sm:text-[14px] max-w-[400px] font-normal leading-[19px] sm:leading-[20px]">"Thoughtful, detail-oriented, and always on time. Upscale Design Studio exceeded every expectation we had for our space."</p>
+                      <p class="split text-[13px] sm:text-[14px] max-w-[400px] mx-auto md:mx-0 font-normal leading-[19px] sm:leading-[20px]">"Thoughtful, detail-oriented, and always on time. Upscale Design Studio exceeded every expectation we had for our space."</p>
                       <p class="text-[13px] sm:text-[14px] font-normal leading-[20px]">Vikram Singh Rathore</p>
                     </div>
-                    <div class="testimonial-content-right w-full sm:w-[30%]">
-                      <img class="w-full h-[200px] sm:h-full object-cover" src="https://framerusercontent.com/images/sU24OqYUdpw1XvluTke1268bw.png?scale-down-to=1024&width=904&height=1200" alt="">
+                    <div class="testimonial-content-right w-[150px] h-[200px] shrink-0">
+                      <img class="w-[150px] h-[200px] object-cover" src="https://framerusercontent.com/images/sU24OqYUdpw1XvluTke1268bw.png?scale-down-to=1024&width=904&height=1200" alt="">
                     </div>
                   </div>
                 </div>
 
               </div>
+            </div>
+
+            <!-- Prev / Next arrows -->
+            <div class="testimonial-nav flex items-center justify-center sm:justify-end gap-3 mt-8 sm:mt-10">
+              <button id="testimonialPrev" aria-label="Previous testimonial" class="w-11 h-11 flex items-center justify-center rounded-full border border-black/20 hover:bg-black hover:border-black transition-colors duration-300 group">
+                <img src="https://framerusercontent.com/images/j7o2iX0XGOvQlvruBEr86SH5xic.png?width=256&height=256" alt="" class="w-4 h-4 rotate-180 group-hover:invert transition duration-300">
+              </button>
+              <button id="testimonialNext" aria-label="Next testimonial" class="w-11 h-11 flex items-center justify-center rounded-full border border-black/20 hover:bg-black hover:border-black transition-colors duration-300 group">
+                <img src="https://framerusercontent.com/images/j7o2iX0XGOvQlvruBEr86SH5xic.png?width=256&height=256" alt="" class="w-4 h-4 group-hover:invert transition duration-300">
+              </button>
             </div>
           </div>
 
@@ -625,11 +689,11 @@
 <!-- Journal Section -->
 <section id="journal">
 
-    <div class=" py-16 bg-white sm:py-24 md:py-[100px] lg:py-[125px]">
+    <div class=" py-16 bg-white py-25 md:py-[100px] lg:py-[125px]">
 
-        <div class="w-full px-4 sm:px-6 lg:px-10 max-w-7xl mx-auto space-y-8 sm:space-y-10 lg:space-y-12.5">
+        <div class="w-full px-4 sm:px-6 lg:px-10 max-w-7xl mx-auto space-y-[50px] md:space-y-10 lg:space-y-12.5">
 
-            <div class="section-header text-black text-center space-y-2.5">
+            <div class="section-header text-black  space-y-2.5 text-center ">
                 <h2 class="split font-primary font-normal text-[28px] sm:text-[36px] md:text-[42px] lg:text-[48px] leading-[34px] sm:leading-[44px] md:leading-[50px] lg:leading-[58px]">Journal</h2>
                 <p class="split max-w-[300px] sm:max-w-[360px] mx-auto text-[13px] sm:text-[14px] font-normal leading-[19px] sm:leading-[20px]">Insights, ideas, and inspiration from our world of interior design.</p>
 
@@ -637,7 +701,7 @@
 
 
             <div class="section-content">
-                <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-5">
+                <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6.25 md:gap-6 lg:gap-5">
 
 
                     <div class="project space-y-3 sm:space-y-3.75">
@@ -812,17 +876,107 @@
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
 
+<!-- Intro loader: cascading images -> hero morph -->
+<script>
+  // Card scale for each image while it's still a "card" (fraction of full viewport).
+  // Because each .intro-img is always inset:0 (full viewport sized), scaling it
+  // down keeps the SAME aspect ratio as the viewport itself (landscape on desktop)
+  // and keeps it perfectly centered automatically — no top/left/translate math needed.
+  const CARD_SCALE = { 1: 0.34, 2: 0.48, 3: 0.62 };
+
+  // Starting state: each card at its target size, pushed below the viewport, invisible
+  gsap.set(".intro-img-1", { scale: CARD_SCALE[1], y: "55vh", opacity: 0 });
+  gsap.set(".intro-img-2", { scale: CARD_SCALE[2], y: "55vh", opacity: 0 });
+  gsap.set(".intro-img-3", { scale: CARD_SCALE[3], y: "55vh", opacity: 0 });
+  gsap.set("#mainNav", { opacity: 0, y: 20 });
+  gsap.set(".hero-content .horizontal-line, .hero-content .hero-bottom-content", { opacity: 0, y: 20 });
+
+  // Pre-split the hero heading into words now, so it's ready to animate the
+  // instant the intro finishes (SplitText needs fonts loaded first).
+  let heroSplit = null;
+  document.fonts.ready.then(() => {
+    heroSplit = SplitText.create(".hero-content h2.split", {
+      type: "words, lines",
+      mask: "lines",
+      linesClass: "line++",
+    });
+    gsap.set(heroSplit.words, { yPercent: 200, opacity: 0 });
+  });
+
+  // Lock scroll while the intro plays
+  document.documentElement.style.overflow = "hidden";
+
+  function playIntro() {
+    const tl = gsap.timeline({
+      defaults: { ease: "power2.out" },
+      onComplete: () => {
+        document.documentElement.style.overflow = "";
+        document.getElementById("introLoader").style.display = "none";
+      }
+    });
+
+    tl
+      // 1) first card rises from bottom to dead center, at its own size
+      .to(".intro-img-1", { y: 0, opacity: 1, duration: 0.9 })
+
+      // 2) second card rises in, bigger, layered above — first stays visible behind it
+      .to(".intro-img-2", { y: 0, opacity: 1, duration: 0.9 }, "-=0.55")
+
+      // 3) third card (the real hero shot) rises in, biggest of the three
+      .to(".intro-img-3", { y: 0, opacity: 1, duration: 0.9 }, "-=0.55")
+
+      // 4) merge: first two fade back, third scales up to fill the screen —
+      //    ONLY scale/opacity/border-radius/box-shadow are animated here,
+      //    nothing that triggers layout, so this stays perfectly smooth.
+      .to(".intro-img-1, .intro-img-2", { opacity: 0, duration: 0.6 }, "merge")
+      .to(".intro-img-3", {
+          scale: 1,
+          borderRadius: 0,
+          boxShadow: "none",
+          duration: 1.1,
+          ease: "power2.inOut"
+        }, "merge")
+
+      // 5) fade the whole loader out, revealing the real header underneath
+      .to("#introLoader", { opacity: 0, duration: 0.5 }, "merge+=0.95")
+
+      // 6) nav fades/slides in
+      .to("#mainNav", { opacity: 1, y: 0, duration: 0.8 }, "merge+=1.1")
+
+      // 7) hero heading reveals word-by-word (same style as the rest of the site),
+      //    then the line + supporting copy fade/slide up right after
+      .add(() => {
+        if (heroSplit) {
+          gsap.to(heroSplit.words, {
+            yPercent: 0, opacity: 1, duration: 1.1, ease: "expo.out", stagger: 0.06
+          });
+        }
+      }, "merge+=1.1")
+      .to(".hero-content .horizontal-line, .hero-content .hero-bottom-content",
+        { opacity: 1, y: 0, duration: 0.7 }, "merge+=1.5")
+
+      // 8) refresh ScrollTrigger now that layout/animations have settled
+      .call(() => { ScrollTrigger.refresh(); });
+  }
+
+  window.addEventListener("load", playIntro);
+</script>
+
 <script>
   const testimonialSwiper = new Swiper(".testimonialSwiper", {
-    speed: 700,
-    grabCursor: false,
-    loop: true,
-    spaceBetween: 40,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
-  });
+  speed: 700,
+  grabCursor: false,
+  loop: true,
+  spaceBetween: 40,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
+  navigation: {
+    nextEl: "#testimonialNext",
+    prevEl: "#testimonialPrev",
+  },
+});
 
   const dragCursor = document.getElementById("dragCursor");
   const swiperArea = document.getElementById("testimonialArea");
@@ -859,7 +1013,11 @@
   gsap.registerPlugin(SplitText, ScrollTrigger);
 
   document.fonts.ready.then(() => {
+    // Hero heading is excluded here — it's revealed by the intro loader
+    // timeline instead (see the intro loader script), so it doesn't fire
+    // underneath the loader before you ever see it.
     document.querySelectorAll(".split").forEach((el) => {
+      if (el.closest(".hero-content")) return;
       let split = SplitText.create(el, {
         type: "words, lines",   // only split into words and lines (not characters)
         mask: "lines",          // wraps each line in an overflow:clip mask (v3.13+)
